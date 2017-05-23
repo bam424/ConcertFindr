@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hgR-4K-lax">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hgR-4K-lax">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,7 +50,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8b-mH-b62" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="765.60000000000002" y="19.340329835082461"/>
+            <point key="canvasLocation" x="-52" y="-263"/>
         </scene>
         <!--List-->
         <scene sceneID="XyR-FE-pDF">
@@ -156,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXS-83-Nm2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1476" y="19.340329835082461"/>
+            <point key="canvasLocation" x="1182" y="-263"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tXA-pT-Dfb">
@@ -170,44 +171,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ConcertFindr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfH-lv-EgC">
-                                <rect key="frame" x="26" y="28" width="323" height="39.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Major City's Name" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="6df-qI-Xh6">
+                                <rect key="frame" x="16" y="304.5" width="343" height="57"/>
+                                <color key="tintColor" red="0.37254901959999998" green="0.61960784310000006" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6df-qI-Xh6" secondAttribute="height" multiplier="181:30" id="CwE-In-bqi"/>
+                                </constraints>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Q0-Cl-FtN">
-                                <rect key="frame" x="212" y="576" width="147" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Add Date Range &gt;"/>
-                                <connections>
-                                    <segue destination="jUk-VB-c1H" kind="show" id="oDm-of-UL8"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6df-qI-Xh6">
-                                <rect key="frame" x="16" y="318.5" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ConcertFindrSlogan" translatesAutoresizingMaskIntoConstraints="NO" id="RtQ-f8-gbI">
+                                <rect key="frame" x="16" y="107" width="343" height="121"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RtQ-f8-gbI" secondAttribute="height" multiplier="343:121" id="bgU-dZ-fMA"/>
+                                </constraints>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="99X-VU-lcr">
+                                <rect key="frame" x="176" y="565" width="23" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="0.37254901960784315" green="0.61960784313725492" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMU-zU-fMz">
+                                <rect key="frame" x="16" y="485.5" width="343" height="63.5"/>
+                                <color key="backgroundColor" red="0.37254901959999998" green="0.61960784310000006" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dMU-zU-fMz" secondAttribute="height" multiplier="323:60" id="hlt-jZ-q0c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Add a Date Range">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="jUk-VB-c1H" kind="presentation" modalPresentationStyle="formSheet" modalTransitionStyle="flipHorizontal" id="vpy-Td-ZSQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6df-qI-Xh6" firstAttribute="centerY" secondItem="Qj2-CL-GYN" secondAttribute="centerY" id="3Z7-e8-OuN"/>
-                            <constraint firstItem="6df-qI-Xh6" firstAttribute="leading" secondItem="Qj2-CL-GYN" secondAttribute="leadingMargin" id="9fT-mg-vbc"/>
-                            <constraint firstItem="mG2-Qe-V33" firstAttribute="top" secondItem="3Q0-Cl-FtN" secondAttribute="bottom" constant="8" id="CCg-Qe-hVj"/>
-                            <constraint firstItem="GfH-lv-EgC" firstAttribute="top" secondItem="8vr-Jf-ulP" secondAttribute="bottom" constant="8" id="CTg-tR-QnL"/>
-                            <constraint firstItem="3Q0-Cl-FtN" firstAttribute="trailing" secondItem="Qj2-CL-GYN" secondAttribute="trailingMargin" id="PYn-uR-YUI"/>
-                            <constraint firstItem="GfH-lv-EgC" firstAttribute="leading" secondItem="Qj2-CL-GYN" secondAttribute="leadingMargin" constant="10" id="UyD-7h-Mfn"/>
-                            <constraint firstItem="6df-qI-Xh6" firstAttribute="trailing" secondItem="Qj2-CL-GYN" secondAttribute="trailingMargin" id="Y2i-Cp-Xtw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GfH-lv-EgC" secondAttribute="trailing" constant="10" id="azn-d8-STp"/>
+                            <constraint firstItem="99X-VU-lcr" firstAttribute="centerX" secondItem="Qj2-CL-GYN" secondAttribute="centerX" id="0cT-Pw-Z0V"/>
+                            <constraint firstItem="99X-VU-lcr" firstAttribute="top" secondItem="dMU-zU-fMz" secondAttribute="bottom" constant="16" id="2rs-EY-WfD"/>
+                            <constraint firstItem="mG2-Qe-V33" firstAttribute="top" secondItem="99X-VU-lcr" secondAttribute="bottom" constant="16" id="4k2-fi-Hco"/>
+                            <constraint firstItem="6df-qI-Xh6" firstAttribute="centerY" secondItem="Qj2-CL-GYN" secondAttribute="centerY" id="Hir-BE-W2D"/>
+                            <constraint firstItem="RtQ-f8-gbI" firstAttribute="trailing" secondItem="Qj2-CL-GYN" secondAttribute="trailingMargin" id="I7y-1W-KzJ"/>
+                            <constraint firstItem="RtQ-f8-gbI" firstAttribute="top" secondItem="8vr-Jf-ulP" secondAttribute="bottom" constant="87" id="Ocu-4Y-1Ut"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dMU-zU-fMz" secondAttribute="trailing" id="QdI-if-yeJ"/>
+                            <constraint firstItem="6df-qI-Xh6" firstAttribute="leading" secondItem="Qj2-CL-GYN" secondAttribute="leadingMargin" id="cNM-Bj-JW6"/>
+                            <constraint firstItem="RtQ-f8-gbI" firstAttribute="leading" secondItem="Qj2-CL-GYN" secondAttribute="leadingMargin" id="ndD-Fo-EHG"/>
+                            <constraint firstItem="dMU-zU-fMz" firstAttribute="leading" secondItem="Qj2-CL-GYN" secondAttribute="leadingMargin" id="tcS-M2-aH1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6df-qI-Xh6" secondAttribute="trailing" id="td9-Fc-laW"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="OpE-aj-fQO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9C-VM-pzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-52" y="-641.82908545727139"/>
+            <point key="canvasLocation" x="-52" y="-1255"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qZy-94-jaA">
@@ -221,44 +246,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ConcertFindr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mE-6C-LVF">
-                                <rect key="frame" x="26" y="28" width="323" height="39.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a date range:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaZ-lc-ASr">
-                                <rect key="frame" x="26" y="107.5" width="323" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPo-qw-K9d">
+                                <rect key="frame" x="16" y="533" width="343" height="64"/>
+                                <color key="backgroundColor" red="0.37254901959999998" green="0.61960784310000006" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YPo-qw-K9d" secondAttribute="height" multiplier="343:64" id="Rcl-Bt-jU8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8OY-hY-eIC">
-                                <rect key="frame" x="26" y="571" width="323" height="39"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Search for concerts">
+                                <state key="normal" title="Search for Concerts">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="Uyf-IK-Fdu">
+                                <rect key="frame" x="176" y="614" width="23" height="37"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" red="0.37254901959999998" green="0.61960784310000006" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ConcertFindrNoSlogan" translatesAutoresizingMaskIntoConstraints="NO" id="FSs-e7-wwV">
+                                <rect key="frame" x="16" y="28" width="343" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FSs-e7-wwV" secondAttribute="height" multiplier="343:51" id="OoC-XW-S1q"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="OaZ-lc-ASr" secondAttribute="trailing" constant="10" id="6eh-a0-O74"/>
-                            <constraint firstItem="8OY-hY-eIC" firstAttribute="leading" secondItem="xYb-Pv-yhB" secondAttribute="leadingMargin" constant="10" id="NI6-JG-G2x"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1mE-6C-LVF" secondAttribute="trailing" constant="10" id="VTV-dn-GH4"/>
-                            <constraint firstItem="1mE-6C-LVF" firstAttribute="leading" secondItem="xYb-Pv-yhB" secondAttribute="leadingMargin" constant="10" id="YGG-cm-Xqx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="8OY-hY-eIC" secondAttribute="trailing" constant="10" id="kXI-bm-qOc"/>
-                            <constraint firstItem="5vw-78-Dtu" firstAttribute="top" secondItem="8OY-hY-eIC" secondAttribute="bottom" constant="8" id="vKn-2W-xhh"/>
-                            <constraint firstItem="OaZ-lc-ASr" firstAttribute="leading" secondItem="xYb-Pv-yhB" secondAttribute="leadingMargin" constant="10" id="wJF-Xw-zUY"/>
-                            <constraint firstItem="OaZ-lc-ASr" firstAttribute="top" secondItem="1mE-6C-LVF" secondAttribute="bottom" constant="40" id="z8h-hC-OPz"/>
-                            <constraint firstItem="1mE-6C-LVF" firstAttribute="top" secondItem="jHr-mT-pFt" secondAttribute="bottom" constant="8" id="zsI-Ks-rNN"/>
+                            <constraint firstItem="Uyf-IK-Fdu" firstAttribute="top" secondItem="YPo-qw-K9d" secondAttribute="bottom" constant="17" id="30D-BL-vJa"/>
+                            <constraint firstItem="Uyf-IK-Fdu" firstAttribute="centerX" secondItem="xYb-Pv-yhB" secondAttribute="centerX" id="3st-L0-oYc"/>
+                            <constraint firstItem="YPo-qw-K9d" firstAttribute="leading" secondItem="xYb-Pv-yhB" secondAttribute="leadingMargin" id="FHt-39-MEF"/>
+                            <constraint firstItem="FSs-e7-wwV" firstAttribute="top" secondItem="jHr-mT-pFt" secondAttribute="bottom" constant="8" id="Gyp-qd-s2N"/>
+                            <constraint firstItem="YPo-qw-K9d" firstAttribute="trailing" secondItem="xYb-Pv-yhB" secondAttribute="trailingMargin" id="ObX-co-yfk"/>
+                            <constraint firstItem="FSs-e7-wwV" firstAttribute="trailing" secondItem="xYb-Pv-yhB" secondAttribute="trailingMargin" id="Uol-IO-rPn"/>
+                            <constraint firstItem="FSs-e7-wwV" firstAttribute="leading" secondItem="xYb-Pv-yhB" secondAttribute="leadingMargin" id="VAz-9g-zdH"/>
+                            <constraint firstItem="5vw-78-Dtu" firstAttribute="top" secondItem="Uyf-IK-Fdu" secondAttribute="bottom" constant="16" id="pWX-do-6rX"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Fxg-j5-M9j"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o13-dY-EcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="693.60000000000002" y="-642.72863568215894"/>
+            <point key="canvasLocation" x="1183" y="-1255"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HGk-Ar-6Uu">
@@ -283,5 +316,7 @@
     <resources>
         <image name="001-list" width="32" height="32"/>
         <image name="002-map-location" width="32" height="32"/>
+        <image name="ConcertFindrNoSlogan" width="2647" height="641"/>
+        <image name="ConcertFindrSlogan" width="1323" height="394"/>
     </resources>
 </document>
