@@ -12,9 +12,11 @@
 		56DDC6341ED4B33300B1CA10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DDC6321ED4B33300B1CA10 /* Main.storyboard */; };
 		56DDC6361ED4B33300B1CA10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DDC6351ED4B33300B1CA10 /* Assets.xcassets */; };
 		56DDC6391ED4B33300B1CA10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DDC6371ED4B33300B1CA10 /* LaunchScreen.storyboard */; };
+		D9EA2053E236927BE713CD32 /* Pods_ConcertFindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A19B24A5B825A136C1BB1BB /* Pods_ConcertFindr.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		294655F883B5B37D136C1217 /* Pods-ConcertFindr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConcertFindr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConcertFindr/Pods-ConcertFindr.debug.xcconfig"; sourceTree = "<group>"; };
 		56DDC62B1ED4B33300B1CA10 /* ConcertFindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcertFindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DDC62E1ED4B33300B1CA10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56DDC6301ED4B33300B1CA10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		56DDC6351ED4B33300B1CA10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56DDC6381ED4B33300B1CA10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56DDC63A1ED4B33300B1CA10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A19B24A5B825A136C1BB1BB /* Pods_ConcertFindr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConcertFindr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B48670961D4D078A04F77AA2 /* Pods-ConcertFindr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConcertFindr.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConcertFindr/Pods-ConcertFindr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9EA2053E236927BE713CD32 /* Pods_ConcertFindr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2831F3743A56B4D1A6F3360B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				294655F883B5B37D136C1217 /* Pods-ConcertFindr.debug.xcconfig */,
+				B48670961D4D078A04F77AA2 /* Pods-ConcertFindr.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		56DDC6221ED4B33300B1CA10 = {
 			isa = PBXGroup;
 			children = (
 				56DDC62D1ED4B33300B1CA10 /* ConcertFindr */,
 				56DDC62C1ED4B33300B1CA10 /* Products */,
+				2831F3743A56B4D1A6F3360B /* Pods */,
+				FB041C2CBA73666FC413B9E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = ConcertFindr;
 			sourceTree = "<group>";
 		};
+		FB041C2CBA73666FC413B9E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A19B24A5B825A136C1BB1BB /* Pods_ConcertFindr.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56DDC63D1ED4B33300B1CA10 /* Build configuration list for PBXNativeTarget "ConcertFindr" */;
 			buildPhases = (
+				5CEE1C550DC6EF62D6CDA25C /* [CP] Check Pods Manifest.lock */,
 				56DDC6271ED4B33300B1CA10 /* Sources */,
 				56DDC6281ED4B33300B1CA10 /* Frameworks */,
 				56DDC6291ED4B33300B1CA10 /* Resources */,
+				C3986C4B24A527DE2A549785 /* [CP] Embed Pods Frameworks */,
+				B792D1133388A2B0EF7F45E6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5CEE1C550DC6EF62D6CDA25C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B792D1133388A2B0EF7F45E6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConcertFindr/Pods-ConcertFindr-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3986C4B24A527DE2A549785 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConcertFindr/Pods-ConcertFindr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		56DDC6271ED4B33300B1CA10 /* Sources */ = {
@@ -261,6 +336,7 @@
 		};
 		56DDC63E1ED4B33300B1CA10 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 294655F883B5B37D136C1217 /* Pods-ConcertFindr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 29JSJR2G6U;
@@ -274,6 +350,7 @@
 		};
 		56DDC63F1ED4B33300B1CA10 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B48670961D4D078A04F77AA2 /* Pods-ConcertFindr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 29JSJR2G6U;
