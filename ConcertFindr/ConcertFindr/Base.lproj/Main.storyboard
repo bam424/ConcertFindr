@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d1c-SP-Gh5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d1c-SP-Gh5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -238,17 +238,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Major City's Name" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="6df-qI-Xh6">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Major City's Name" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="6df-qI-Xh6">
                                 <rect key="frame" x="16" y="304.5" width="343" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.37254901959999998" green="0.61960784310000006" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6df-qI-Xh6" secondAttribute="height" multiplier="343:57" id="YFF-F8-taz"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ConcertFindrSlogan" translatesAutoresizingMaskIntoConstraints="NO" id="RtQ-f8-gbI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ConcertFindrSlogan" translatesAutoresizingMaskIntoConstraints="NO" id="RtQ-f8-gbI">
                                 <rect key="frame" x="16" y="107" width="343" height="121"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RtQ-f8-gbI" secondAttribute="height" multiplier="343:121" id="Kyb-1X-ExB"/>
+                                </constraints>
                             </imageView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="99X-VU-lcr">
                                 <rect key="frame" x="176" y="565" width="23" height="37"/>
@@ -273,7 +277,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addDateRangeButtonClick:" destination="d1c-SP-Gh5" eventType="touchUpInside" id="ynL-l8-S8B"/>
-                                    <segue destination="jUk-VB-c1H" kind="show" identifier="DateRangeInputViewController" id="vpy-Td-ZSQ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By using this application, I agree to the Terms and Conditions provided by ConcertFindr and their affiliates." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pX-85-yo9">
@@ -289,25 +292,38 @@
                                     <constraint firstAttribute="width" secondItem="IRh-kw-3s2" secondAttribute="height" multiplier="15:2" id="9IN-yB-svn"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Yt9-kx-R6K">
+                                <rect key="frame" x="327" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dMU-zU-fMz" firstAttribute="leading" secondItem="Qj2-CL-GYN" secondAttribute="leadingMargin" id="3wd-lh-Q0a"/>
                             <constraint firstItem="IRh-kw-3s2" firstAttribute="leading" secondItem="Qj2-CL-GYN" secondAttribute="leading" id="46y-A6-zMr"/>
                             <constraint firstItem="9pX-85-yo9" firstAttribute="leading" secondItem="Qj2-CL-GYN" secondAttribute="leadingMargin" id="5Wa-8g-iwb"/>
+                            <constraint firstItem="Yt9-kx-R6K" firstAttribute="centerY" secondItem="Qj2-CL-GYN" secondAttribute="centerY" id="6vu-Su-QtR"/>
                             <constraint firstItem="99X-VU-lcr" firstAttribute="centerX" secondItem="Qj2-CL-GYN" secondAttribute="centerX" id="HWC-ix-3L8"/>
+                            <constraint firstItem="6df-qI-Xh6" firstAttribute="leading" secondItem="Qj2-CL-GYN" secondAttribute="leadingMargin" id="IjT-bk-PtU"/>
                             <constraint firstItem="99X-VU-lcr" firstAttribute="top" secondItem="dMU-zU-fMz" secondAttribute="bottom" constant="16" id="V2S-yn-IBZ"/>
                             <constraint firstItem="9pX-85-yo9" firstAttribute="trailing" secondItem="Qj2-CL-GYN" secondAttribute="trailingMargin" id="WUA-jO-tf9"/>
                             <constraint firstItem="mG2-Qe-V33" firstAttribute="top" secondItem="9pX-85-yo9" secondAttribute="bottom" constant="14" id="a16-8z-dYI"/>
                             <constraint firstItem="9pX-85-yo9" firstAttribute="top" secondItem="99X-VU-lcr" secondAttribute="bottom" constant="27" id="apG-P4-ZTf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yt9-kx-R6K" secondAttribute="trailing" constant="12" id="jJv-4Y-fTK"/>
                             <constraint firstAttribute="trailing" secondItem="IRh-kw-3s2" secondAttribute="trailing" id="jsh-cj-l8x"/>
+                            <constraint firstItem="6df-qI-Xh6" firstAttribute="trailing" secondItem="Qj2-CL-GYN" secondAttribute="trailingMargin" id="nYW-BV-QSp"/>
+                            <constraint firstItem="6df-qI-Xh6" firstAttribute="centerY" secondItem="Qj2-CL-GYN" secondAttribute="centerY" id="nuS-IW-ig6"/>
                             <constraint firstItem="mG2-Qe-V33" firstAttribute="top" secondItem="IRh-kw-3s2" secondAttribute="bottom" id="sX4-KQ-67J"/>
+                            <constraint firstItem="RtQ-f8-gbI" firstAttribute="leading" secondItem="Qj2-CL-GYN" secondAttribute="leadingMargin" id="xBD-U1-Jgs"/>
+                            <constraint firstItem="RtQ-f8-gbI" firstAttribute="top" secondItem="8vr-Jf-ulP" secondAttribute="bottom" constant="87" id="xoE-Ze-cFk"/>
                             <constraint firstItem="dMU-zU-fMz" firstAttribute="trailing" secondItem="Qj2-CL-GYN" secondAttribute="trailingMargin" id="zL0-Nm-N1U"/>
+                            <constraint firstItem="RtQ-f8-gbI" firstAttribute="trailing" secondItem="Qj2-CL-GYN" secondAttribute="trailingMargin" id="zOE-8J-pIK"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="OpE-aj-fQO"/>
                     <connections>
                         <outlet property="cityNameInputField" destination="6df-qI-Xh6" id="edg-gW-i5c"/>
+                        <outlet property="loadingWheel" destination="Yt9-kx-R6K" id="Kg8-mt-dIw"/>
+                        <segue destination="jUk-VB-c1H" kind="show" identifier="DateRangeInputSegue" id="tcA-fx-1Ly"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9C-VM-pzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -365,6 +381,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="StartDateEditing:" destination="jUk-VB-c1H" eventType="editingDidBegin" id="bFl-e0-Cao"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="End Date" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="oQT-ql-jfM">
                                 <rect key="frame" x="16" y="305" width="343" height="57"/>
@@ -375,6 +394,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="EndDateEditing:" destination="jUk-VB-c1H" eventType="editingDidBegin" id="E6Q-ri-kzS"/>
+                                </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="to" translatesAutoresizingMaskIntoConstraints="NO" id="eY9-1x-Q59">
                                 <rect key="frame" x="16" y="256" width="343" height="29"/>
@@ -393,11 +415,22 @@
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="currentPageIndicatorTintColor" red="0.37254901959999998" green="0.61960784310000006" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="s6m-P4-SfD">
+                                <rect key="frame" x="177.5" y="410.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gatheringconcerts" translatesAutoresizingMaskIntoConstraints="NO" id="3q7-ZY-adH">
+                                <rect key="frame" x="131" y="416.5" width="112" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="61c-zo-jQC"/>
+                                    <constraint firstAttribute="height" constant="59" id="XWO-5m-EIe"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Pon-5m-dAp" secondAttribute="trailing" id="1c4-B5-9Hj"/>
                             <constraint firstItem="9qt-6B-csA" firstAttribute="leading" secondItem="xYb-Pv-yhB" secondAttribute="leadingMargin" id="5hk-Oz-v1U"/>
+                            <constraint firstItem="s6m-P4-SfD" firstAttribute="centerX" secondItem="xYb-Pv-yhB" secondAttribute="centerX" id="ATt-BU-sWh"/>
                             <constraint firstItem="eTO-rm-uJe" firstAttribute="trailing" secondItem="xYb-Pv-yhB" secondAttribute="trailingMargin" id="CqL-U2-p0s"/>
                             <constraint firstItem="9qt-6B-csA" firstAttribute="trailing" secondItem="xYb-Pv-yhB" secondAttribute="trailingMargin" id="EO4-Al-Kyz"/>
                             <constraint firstItem="FSs-e7-wwV" firstAttribute="top" secondItem="jHr-mT-pFt" secondAttribute="bottom" constant="8" id="FnI-Ke-bDT"/>
@@ -406,6 +439,8 @@
                             <constraint firstItem="oQT-ql-jfM" firstAttribute="trailing" secondItem="xYb-Pv-yhB" secondAttribute="trailingMargin" id="Mne-TF-MS3"/>
                             <constraint firstItem="oQT-ql-jfM" firstAttribute="centerY" secondItem="xYb-Pv-yhB" secondAttribute="centerY" id="NGP-UJ-32H"/>
                             <constraint firstItem="uNM-08-JyJ" firstAttribute="centerX" secondItem="xYb-Pv-yhB" secondAttribute="centerX" id="Orb-B5-IAs"/>
+                            <constraint firstItem="YPo-qw-K9d" firstAttribute="top" secondItem="s6m-P4-SfD" secondAttribute="bottom" constant="55" id="SZY-la-Gde"/>
+                            <constraint firstItem="3q7-ZY-adH" firstAttribute="centerX" secondItem="xYb-Pv-yhB" secondAttribute="centerX" id="TWM-lc-9dG"/>
                             <constraint firstItem="FSs-e7-wwV" firstAttribute="trailing" secondItem="xYb-Pv-yhB" secondAttribute="trailingMargin" id="Uol-IO-rPn"/>
                             <constraint firstItem="FSs-e7-wwV" firstAttribute="leading" secondItem="xYb-Pv-yhB" secondAttribute="leadingMargin" id="VAz-9g-zdH"/>
                             <constraint firstItem="eY9-1x-Q59" firstAttribute="leading" secondItem="xYb-Pv-yhB" secondAttribute="leadingMargin" id="WP2-Qm-y3w"/>
@@ -419,6 +454,7 @@
                             <constraint firstItem="5vw-78-Dtu" firstAttribute="top" secondItem="Pon-5m-dAp" secondAttribute="bottom" id="w8C-Hn-U5K"/>
                             <constraint firstItem="eY9-1x-Q59" firstAttribute="top" secondItem="eTO-rm-uJe" secondAttribute="bottom" constant="20" id="x5G-OJ-fTJ"/>
                             <constraint firstItem="YPo-qw-K9d" firstAttribute="trailing" secondItem="xYb-Pv-yhB" secondAttribute="trailingMargin" id="xee-ll-LYR"/>
+                            <constraint firstItem="YPo-qw-K9d" firstAttribute="top" secondItem="3q7-ZY-adH" secondAttribute="bottom" constant="10" id="zRD-jG-8L2"/>
                             <constraint firstItem="oQT-ql-jfM" firstAttribute="leading" secondItem="xYb-Pv-yhB" secondAttribute="leadingMargin" id="zT4-WO-7iC"/>
                         </constraints>
                     </view>
@@ -426,11 +462,13 @@
                     <connections>
                         <outlet property="EndDateInputField" destination="oQT-ql-jfM" id="CyV-P6-rSZ"/>
                         <outlet property="StartDateInputField" destination="eTO-rm-uJe" id="oMc-Dq-jgA"/>
+                        <outlet property="gatheringConcerts" destination="3q7-ZY-adH" id="6MB-Md-xln"/>
+                        <outlet property="loadingWheel" destination="s6m-P4-SfD" id="al7-gK-P35"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o13-dY-EcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1228" y="-1255"/>
+            <point key="canvasLocation" x="1228" y="-1255.3223388305848"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="F5t-zo-iV9">
@@ -804,6 +842,7 @@ Designated Agent to Receive Notification of Claimed Infringement: Paul Herdemian
         <image name="002-map-location" width="32" height="32"/>
         <image name="ConcertFindrNoSlogan" width="2647" height="641"/>
         <image name="ConcertFindrSlogan" width="1323" height="394"/>
+        <image name="gatheringconcerts" width="1644" height="379"/>
         <image name="to" width="470" height="480"/>
     </resources>
 </document>
