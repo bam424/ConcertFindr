@@ -24,6 +24,8 @@ class DatePickerViewController: UIViewController {
     @IBOutlet weak var EndDateInputField: UITextField!
     @IBOutlet weak var gatheringConcerts: UIImageView!
     
+    private var CityNameSegue: String = "CityNameSegue"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let dateFormatter = DateFormatter()
@@ -45,6 +47,40 @@ class DatePickerViewController: UIViewController {
         TermsAndConditionLabel.isUserInteractionEnabled = true
         let TermsTap = UITapGestureRecognizer(target: self, action: #selector(DatePickerViewController.showTermsAndConditions))
         TermsAndConditionLabel.addGestureRecognizer(TermsTap)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeUp.direction = UISwipeGestureRecognizerDirection.up
+        self.view.addGestureRecognizer(swipeUp)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(swipeRight)
+        
+    }
+    
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.left:
+                SearchConcertsButton(self)
+            case UISwipeGestureRecognizerDirection.up:
+                showTermsAndConditions()
+            case UISwipeGestureRecognizerDirection.right:
+                performSegue(withIdentifier: CityNameSegue, sender: self)
+            default:
+                break
+            }
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == CityNameSegue {
+            let viewController = segue.destination as! CityInputViewController
+        }
     }
     
     func showTermsAndConditions() {
