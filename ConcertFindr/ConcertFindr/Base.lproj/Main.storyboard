@@ -323,7 +323,7 @@
                     <connections>
                         <outlet property="cityNameInputField" destination="6df-qI-Xh6" id="edg-gW-i5c"/>
                         <outlet property="loadingWheel" destination="Yt9-kx-R6K" id="Kg8-mt-dIw"/>
-                        <segue destination="jUk-VB-c1H" kind="show" identifier="DateRangeInputSegue" id="tcA-fx-1Ly"/>
+                        <segue destination="jUk-VB-c1H" kind="show" identifier="DateRangeInputSegue" animates="NO" id="tcA-fx-1Ly"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d9C-VM-pzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -465,6 +465,7 @@
                         <outlet property="TermsAndConditionLabel" destination="9qt-6B-csA" id="3JI-2x-tvs"/>
                         <outlet property="gatheringConcerts" destination="3q7-ZY-adH" id="6MB-Md-xln"/>
                         <outlet property="loadingWheel" destination="s6m-P4-SfD" id="al7-gK-P35"/>
+                        <segue destination="d1c-SP-Gh5" kind="show" identifier="CityNameSegue" animates="NO" id="A9O-9H-4a9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o13-dY-EcO" userLabel="First Responder" sceneMemberID="firstResponder"/>

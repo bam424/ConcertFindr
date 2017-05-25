@@ -24,13 +24,31 @@ class CityInputViewController: UIViewController {
         loadingWheel.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         loadingWheel.center = view.center
         super.viewDidLoad()
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        self.view.addGestureRecognizer(swipeLeft)
+
     }
 
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.left:
+                if !cityNameInputField.text!.isEmpty {
+                    addDateRangeButtonClick(self)
+                }
+            default:
+                break
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func addDateRangeButtonClick(_ sender: UIButton) {
+    @IBAction func addDateRangeButtonClick(_ sender: Any) {
         loadingWheel.startAnimating()
         Alamofire.request("http://api.songkick.com/api/3.0/search/locations.json?apikey=\(SongKickAPIKey)&query=\(self.cityNameInputField.text!)&per_page=1")
             .validate(statusCode: 200..<300)
