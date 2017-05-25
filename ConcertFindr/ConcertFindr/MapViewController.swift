@@ -2,30 +2,41 @@
 //  MapViewController.swift
 //  ConcertFindr
 //
-//  Created by iGuest on 5/23/17.
-//  Copyright © 2017 Derek Han. All rights reserved.
-//
+
+//  Created by Patricia Au on 5/23/17.
 
 import UIKit
 
+import MapKit
+
 class MapViewController: UIViewController {
 
+    //Make sure to redo this when pulling
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //Initial pointer - change this upon api call finished
+        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+        
+        centerMapOnLocation(location: initialLocation)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //regionRadius: what the zoom level should be
+    let regionRadius: CLLocationDistance = 1000
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
+        mapView.setRegion(coordinateRegion, animated: true)
+        
+        //After API call, add to map
+        //Loop through all data points -> turn into ConcertPin object
+        //mapView.addAnnotation(<#T##annotation: MKAnnotation##MKAnnotation#>)
     }
     
-
+    //Get information - pass information to details page
     /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

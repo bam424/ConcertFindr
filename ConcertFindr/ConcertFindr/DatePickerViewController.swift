@@ -148,7 +148,10 @@ class DatePickerViewController: UIViewController {
                 case .success:
                     if let retrievedData = response.data {
                         let json = JSON(data: retrievedData)
-                        print("\(json)")
+                        self.parseReceivedJSON(json: json)
+
+                        //print("\(json)")
+
                     }
                     self.gatheringConcerts.isHidden = true
                     self.loadingWheel.stopAnimating()
@@ -159,5 +162,41 @@ class DatePickerViewController: UIViewController {
                 }
         };
 
+    }
+    
+    func parseReceivedJSON(json: JSON) {
+        for singleConcert in json["resultsPage"]["results"]["event"] {
+            //print(singleConcert.1)
+            let parsedConcert = singleConcert.1
+            
+            //There are sometimes multiple artists
+            var artistsArray = [String]()
+            var listenURL = ""
+            for artist in parsedConcert["performance"] {
+                artistsArray.append(String(describing: artist.1["displayName"]))
+                if artist.1["billingIndex"] == 1 {
+                    listenURL = String(describing: artist.1["artist"]["uri"])
+                    print(listenURL)
+                }
+                
+            }
+            let startTime = parsedConcert["start"]["time"]
+
+            var ageRestriction = String(describing: parsedConcert["ageRestriction"])
+            if (ageRestriction == "null") {
+                ageRestriction = "No age restriction"
+            }
+            var venueName = String(describing: parsedConcert["displayName"])
+            if (venueName == "null") {
+                venueName = "No venue name"
+            }
+            
+            let latitude = parsedConcert["location"]["lat"]
+            print(latitude)
+            let longitude = parsedConcert["location"]["lng"]
+            print(longitude)
+            //ConcertPin(artist: <#T##String#>, startTime: <#T##NSDate#>, ageRestriction: <#T##String#>, venueName: <#T##String#>, listenURL: <#T##String#>, ticketsURL: <#T##String#>, coordinate: <#T##CLLocationCoordinate2D#>)
+
+        }
     }
 }
