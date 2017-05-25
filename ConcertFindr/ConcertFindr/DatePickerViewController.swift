@@ -139,6 +139,7 @@ class DatePickerViewController: UIViewController {
                         self.parseReceivedJSON(json: json)
 
                         //print("\(json)")
+
                     }
                     self.gatheringConcerts.isHidden = true
                     self.loadingWheel.stopAnimating()
