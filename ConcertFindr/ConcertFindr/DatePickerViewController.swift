@@ -18,6 +18,7 @@ class DatePickerViewController: UIViewController {
     var metroID: String = ""
 
     @IBOutlet weak var StartDateInputField: UITextField!
+    @IBOutlet weak var TermsAndConditionLabel: UILabel!
     
     @IBOutlet weak var loadingWheel: UIActivityIndicatorView!
     @IBOutlet weak var EndDateInputField: UITextField!
@@ -40,6 +41,17 @@ class DatePickerViewController: UIViewController {
         gatheringConcerts.isHidden = true
         // Add toolbar to uidatepicker input view
         addToolBar()
+        
+        TermsAndConditionLabel.isUserInteractionEnabled = true
+        let TermsTap = UITapGestureRecognizer(target: self, action: #selector(DatePickerViewController.showTermsAndConditions))
+        TermsAndConditionLabel.addGestureRecognizer(TermsTap)
+    }
+    
+    func showTermsAndConditions() {
+        let popup : TermsAndConditionsViewController = self.storyboard?.instantiateViewController(withIdentifier: "TermsAndConditionsStoryboard") as! TermsAndConditionsViewController
+        let navigationController = UINavigationController(rootViewController: popup)
+        navigationController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        self.present(navigationController, animated: true, completion: nil)
     }
 
     // borrowed from Aproov Mote

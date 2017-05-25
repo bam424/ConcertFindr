@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		562F04EC1ED792120082E06F /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562F04EB1ED792120082E06F /* TermsAndConditionsViewController.swift */; };
 		56DDC62F1ED4B33300B1CA10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DDC62E1ED4B33300B1CA10 /* AppDelegate.swift */; };
 		56DDC6311ED4B33300B1CA10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DDC6301ED4B33300B1CA10 /* ViewController.swift */; };
 		56DDC6341ED4B33300B1CA10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DDC6321ED4B33300B1CA10 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		294655F883B5B37D136C1217 /* Pods-ConcertFindr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConcertFindr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConcertFindr/Pods-ConcertFindr.debug.xcconfig"; sourceTree = "<group>"; };
+		562F04EB1ED792120082E06F /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
 		56DDC62B1ED4B33300B1CA10 /* ConcertFindr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcertFindr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DDC62E1ED4B33300B1CA10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56DDC6301ED4B33300B1CA10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				56DDC63A1ED4B33300B1CA10 /* Info.plist */,
 				9D156DDB1ED50C0F00C02337 /* MapViewController.swift */,
 				9D156DDD1ED5106500C02337 /* CityInputViewController.swift */,
+				562F04EB1ED792120082E06F /* TermsAndConditionsViewController.swift */,
 			);
 			path = ConcertFindr;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			files = (
 				9D156DDE1ED5106500C02337 /* CityInputViewController.swift in Sources */,
 				9D156DE01ED5125700C02337 /* DatePickerViewController.swift in Sources */,
+				562F04EC1ED792120082E06F /* TermsAndConditionsViewController.swift in Sources */,
 				56DDC6311ED4B33300B1CA10 /* ViewController.swift in Sources */,
 				9D156DDC1ED50C0F00C02337 /* MapViewController.swift in Sources */,
 				56DDC62F1ED4B33300B1CA10 /* AppDelegate.swift in Sources */,
