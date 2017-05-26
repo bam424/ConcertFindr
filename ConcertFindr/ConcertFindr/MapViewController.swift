@@ -10,15 +10,28 @@ import UIKit
 import MapKit
 
 class MapViewController: UIViewController {
+    var annotations = [ConcertPin]() //Array of concert pin objects to populate map
+   
 
     //Make sure to redo this when pulling
     @IBOutlet weak var mapView: MKMapView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Initial pointer - change this upon api call finished
-        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+        let initialLocation = CLLocation(latitude: 47.6062, longitude: -122.3321)
+        if annotations.count > 0 {
+            mapView.addAnnotations(annotations)
+            print("Added pin")
+        } else {
+            print("Did not add pins")
+            print(annotations)
+        }
         
         centerMapOnLocation(location: initialLocation)
     }
@@ -32,6 +45,7 @@ class MapViewController: UIViewController {
         //After API call, add to map
         //Loop through all data points -> turn into ConcertPin object
         //mapView.addAnnotation(<#T##annotation: MKAnnotation##MKAnnotation#>)
+//        mapView.addAnnotations([""])
     }
     
     //Get information - pass information to details page

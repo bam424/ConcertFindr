@@ -370,7 +370,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="SearchConcertsButton:" destination="jUk-VB-c1H" eventType="touchUpInside" id="KgD-fK-ASG"/>
-                                    <segue destination="MMs-Ao-ETf" kind="show" id="onb-to-vlS"/>
+                                    <segue destination="MMs-Ao-ETf" kind="show" identifier="mapViewSegue" id="onb-to-vlS"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ConcertFindrNoSlogan" translatesAutoresizingMaskIntoConstraints="NO" id="FSs-e7-wwV">

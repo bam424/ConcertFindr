@@ -16,6 +16,7 @@ class DatePickerViewController: UIViewController {
 
     var cityName: String = ""
     var metroID: String = ""
+    var pins = [ConcertPin]()
 
     @IBOutlet weak var StartDateInputField: UITextField!
     @IBOutlet weak var TermsAndConditionLabel: UILabel!
@@ -25,6 +26,7 @@ class DatePickerViewController: UIViewController {
     @IBOutlet weak var gatheringConcerts: UIImageView!
     
     private var CityNameSegue: String = "CityNameSegue"
+    private var MapViewSegue: String = "mapViewSegue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,12 +76,6 @@ class DatePickerViewController: UIViewController {
             default:
                 break
             }
-        }
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == CityNameSegue {
-            let viewController = segue.destination as! CityInputViewController
         }
     }
     
@@ -165,6 +161,17 @@ class DatePickerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == CityNameSegue {
+            let viewController = segue.destination as! CityInputViewController
+        } else if segue.identifier == MapViewSegue {
+            let viewController = (segue.destination as! UITabBarController).viewControllers?[0] as! MapViewController
+            print("Printing self.pins")
+            print(pins)
+            viewController.annotations = self.pins
+        }
+    }
+    
     @IBAction func SearchConcertsButton(_ sender: Any) {
         gatheringConcerts.isHidden = false
         loadingWheel.startAnimating()
@@ -185,6 +192,8 @@ class DatePickerViewController: UIViewController {
                     if let retrievedData = response.data {
                         let json = JSON(data: retrievedData)
                         self.parseReceivedJSON(json: json)
+                        print("perform segue")
+//                        self.performSegue(withIdentifier: self.MapViewSegue, sender: self)
 
                         //print("\(json)")
 
@@ -201,7 +210,7 @@ class DatePickerViewController: UIViewController {
     }
     
     func parseReceivedJSON(json: JSON) {
-        var pins = [ConcertPin]()
+        print("Parsing json")
         for singleConcert in json["resultsPage"]["results"]["event"] {
             //print(singleConcert.1)
             let parsedConcert = singleConcert.1
@@ -213,7 +222,6 @@ class DatePickerViewController: UIViewController {
                 artistsArray.append(String(describing: artist.1["displayName"]))
                 if artist.1["billingIndex"] == 1 {
                     listenURL = String(describing: artist.1["artist"]["uri"])
-                    print(listenURL)
                 }
                 
             }
@@ -233,6 +241,8 @@ class DatePickerViewController: UIViewController {
 
             pins.append(ConcertPin(artist: artistsArray, startTime: startTime, ageRestriction: ageRestriction, venueName: venueName, listenURL: listenURL, ticketsURL: "", latitude: latitude!, longitude: longitude!))
 
+
         }
+        self.performSegue(withIdentifier: self.MapViewSegue, sender: self)
     }
 }
