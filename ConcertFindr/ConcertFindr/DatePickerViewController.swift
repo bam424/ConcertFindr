@@ -201,6 +201,7 @@ class DatePickerViewController: UIViewController {
     }
     
     func parseReceivedJSON(json: JSON) {
+        var pins = [ConcertPin]()
         for singleConcert in json["resultsPage"]["results"]["event"] {
             //print(singleConcert.1)
             let parsedConcert = singleConcert.1
@@ -216,7 +217,7 @@ class DatePickerViewController: UIViewController {
                 }
                 
             }
-            let startTime = parsedConcert["start"]["time"]
+            let startTime = String(describing: parsedConcert["start"]["time"])
 
             var ageRestriction = String(describing: parsedConcert["ageRestriction"])
             if (ageRestriction == "null") {
@@ -227,11 +228,10 @@ class DatePickerViewController: UIViewController {
                 venueName = "No venue name"
             }
             
-            let latitude = parsedConcert["location"]["lat"]
-            print(latitude)
-            let longitude = parsedConcert["location"]["lng"]
-            print(longitude)
-            //ConcertPin(artist: <#T##String#>, startTime: <#T##NSDate#>, ageRestriction: <#T##String#>, venueName: <#T##String#>, listenURL: <#T##String#>, ticketsURL: <#T##String#>, coordinate: <#T##CLLocationCoordinate2D#>)
+            let latitude = Double(String(describing: parsedConcert["location"]["lat"]))
+            let longitude = Double(String(describing:parsedConcert["location"]["lng"]))
+
+            pins.append(ConcertPin(artist: artistsArray, startTime: startTime, ageRestriction: ageRestriction, venueName: venueName, listenURL: listenURL, ticketsURL: "", latitude: latitude!, longitude: longitude!))
 
         }
     }
