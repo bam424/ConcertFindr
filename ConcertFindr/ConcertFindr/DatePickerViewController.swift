@@ -192,8 +192,7 @@ class DatePickerViewController: UIViewController {
                     self.gatheringConcerts.isHidden = true
                     self.loadingWheel.stopAnimating()
                 case .failure(let error):
-                    print("\(error)")
-                    print("failed")
+                    self.gatheringConcerts.isHidden = true
                     self.loadingWheel.stopAnimating()
                 }
         };
