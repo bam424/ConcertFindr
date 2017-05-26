@@ -60,6 +60,8 @@ class DatePickerViewController: UIViewController {
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(swipeRight)
         
+        
+        
     }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -203,7 +205,6 @@ class DatePickerViewController: UIViewController {
     func parseReceivedJSON(json: JSON) {
         var pins = [ConcertPin]()
         for singleConcert in json["resultsPage"]["results"]["event"] {
-            //print(singleConcert.1)
             let parsedConcert = singleConcert.1
             
             //There are sometimes multiple artists
@@ -213,12 +214,12 @@ class DatePickerViewController: UIViewController {
                 artistsArray.append(String(describing: artist.1["displayName"]))
                 if artist.1["billingIndex"] == 1 {
                     listenURL = String(describing: artist.1["artist"]["uri"])
-                    print(listenURL)
                 }
                 
             }
             let startTime = String(describing: parsedConcert["start"]["time"])
-
+            let ticketsURL = String(describing: parsedConcert["uri"])
+            
             var ageRestriction = String(describing: parsedConcert["ageRestriction"])
             if (ageRestriction == "null") {
                 ageRestriction = "No age restriction"
@@ -230,9 +231,8 @@ class DatePickerViewController: UIViewController {
             
             let latitude = Double(String(describing: parsedConcert["location"]["lat"]))
             let longitude = Double(String(describing:parsedConcert["location"]["lng"]))
-
-            pins.append(ConcertPin(artist: artistsArray, startTime: startTime, ageRestriction: ageRestriction, venueName: venueName, listenURL: listenURL, ticketsURL: "", latitude: latitude!, longitude: longitude!))
-
+            
+            pins.append(ConcertPin(artist: artistsArray, startTime: startTime, ageRestriction: ageRestriction, venueName: venueName, listenURL: listenURL, ticketsURL: ticketsURL, latitude: latitude!, longitude: longitude!))
         }
     }
 }
