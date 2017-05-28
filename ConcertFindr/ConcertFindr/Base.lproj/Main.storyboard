@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d1c-SP-Gh5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d1c-SP-Gh5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -94,7 +94,7 @@
         <!--Map-->
         <scene sceneID="18X-4b-s9l">
             <objects>
-                <viewController id="EDb-e1-Hrl" sceneMemberID="viewController">
+                <viewController id="EDb-e1-Hrl" customClass="MapViewController" customModule="ConcertFindr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xCd-A8-I36"/>
                         <viewControllerLayoutGuide type="bottom" id="nhb-DR-7zb"/>
@@ -116,6 +116,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="002-map-location" id="SgJ-Cc-czW"/>
+                    <connections>
+                        <outlet property="mapView" destination="ETl-e0-Uow" id="bKm-xs-ytO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X7y-95-OX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -367,6 +370,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="SearchConcertsButton:" destination="jUk-VB-c1H" eventType="touchUpInside" id="KgD-fK-ASG"/>
+                                    <segue destination="MMs-Ao-ETf" kind="show" identifier="mapViewSegue" id="onb-to-vlS"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ConcertFindrNoSlogan" translatesAutoresizingMaskIntoConstraints="NO" id="FSs-e7-wwV">

@@ -16,6 +16,7 @@ class DatePickerViewController: UIViewController {
 
     var cityName: String = ""
     var metroID: String = ""
+    var pins = [ConcertPin]()
 
     @IBOutlet weak var StartDateInputField: UITextField!
     @IBOutlet weak var TermsAndConditionLabel: UILabel!
@@ -25,6 +26,7 @@ class DatePickerViewController: UIViewController {
     @IBOutlet weak var gatheringConcerts: UIImageView!
     
     private var CityNameSegue: String = "CityNameSegue"
+    private var MapViewSegue: String = "mapViewSegue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +62,8 @@ class DatePickerViewController: UIViewController {
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(swipeRight)
         
+        
+        
     }
     
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -74,12 +78,6 @@ class DatePickerViewController: UIViewController {
             default:
                 break
             }
-        }
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == CityNameSegue {
-            let viewController = segue.destination as! CityInputViewController
         }
     }
     
@@ -165,6 +163,17 @@ class DatePickerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == CityNameSegue {
+            let viewController = segue.destination as! CityInputViewController
+        } else if segue.identifier == MapViewSegue {
+            let viewController = (segue.destination as! UITabBarController).viewControllers?[0] as! MapViewController
+            print("Printing self.pins")
+            print(pins)
+            viewController.annotations = self.pins
+        }
+    }
+    
     @IBAction func SearchConcertsButton(_ sender: Any) {
         gatheringConcerts.isHidden = false
         loadingWheel.startAnimating()
@@ -185,6 +194,8 @@ class DatePickerViewController: UIViewController {
                     if let retrievedData = response.data {
                         let json = JSON(data: retrievedData)
                         self.parseReceivedJSON(json: json)
+                        print("perform segue")
+//                        self.performSegue(withIdentifier: self.MapViewSegue, sender: self)
 
                         //print("\(json)")
 
@@ -200,8 +211,8 @@ class DatePickerViewController: UIViewController {
     }
     
     func parseReceivedJSON(json: JSON) {
+        print("Parsing json")
         for singleConcert in json["resultsPage"]["results"]["event"] {
-            //print(singleConcert.1)
             let parsedConcert = singleConcert.1
             
             //There are sometimes multiple artists
@@ -211,12 +222,12 @@ class DatePickerViewController: UIViewController {
                 artistsArray.append(String(describing: artist.1["displayName"]))
                 if artist.1["billingIndex"] == 1 {
                     listenURL = String(describing: artist.1["artist"]["uri"])
-                    print(listenURL)
                 }
                 
             }
-            let startTime = parsedConcert["start"]["time"]
-
+            let startTime = String(describing: parsedConcert["start"]["time"])
+            let ticketsURL = String(describing: parsedConcert["uri"])
+            
             var ageRestriction = String(describing: parsedConcert["ageRestriction"])
             if (ageRestriction == "null") {
                 ageRestriction = "No age restriction"
@@ -226,12 +237,12 @@ class DatePickerViewController: UIViewController {
                 venueName = "No venue name"
             }
             
-            let latitude = parsedConcert["location"]["lat"]
-            print(latitude)
-            let longitude = parsedConcert["location"]["lng"]
-            print(longitude)
-            //ConcertPin(artist: <#T##String#>, startTime: <#T##NSDate#>, ageRestriction: <#T##String#>, venueName: <#T##String#>, listenURL: <#T##String#>, ticketsURL: <#T##String#>, coordinate: <#T##CLLocationCoordinate2D#>)
+            let latitude = Double(String(describing: parsedConcert["location"]["lat"]))
+            let longitude = Double(String(describing:parsedConcert["location"]["lng"]))
 
+            
+            pins.append(ConcertPin(artist: artistsArray, startTime: startTime, ageRestriction: ageRestriction, venueName: venueName, listenURL: listenURL, ticketsURL: ticketsURL, latitude: latitude!, longitude: longitude!))
         }
+        self.performSegue(withIdentifier: self.MapViewSegue, sender: self)
     }
 }
