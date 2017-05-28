@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d1c-SP-Gh5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d1c-SP-Gh5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -370,7 +370,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="SearchConcertsButton:" destination="jUk-VB-c1H" eventType="touchUpInside" id="KgD-fK-ASG"/>
-                                    <segue destination="MMs-Ao-ETf" kind="show" identifier="mapViewSegue" id="onb-to-vlS"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ConcertFindrNoSlogan" translatesAutoresizingMaskIntoConstraints="NO" id="FSs-e7-wwV">
@@ -470,6 +469,7 @@
                         <outlet property="gatheringConcerts" destination="3q7-ZY-adH" id="6MB-Md-xln"/>
                         <outlet property="loadingWheel" destination="s6m-P4-SfD" id="al7-gK-P35"/>
                         <segue destination="d1c-SP-Gh5" kind="show" identifier="CityNameSegue" animates="NO" id="A9O-9H-4a9"/>
+                        <segue destination="MMs-Ao-ETf" kind="show" identifier="mapViewSegue" id="en7-MK-5RY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o13-dY-EcO" userLabel="First Responder" sceneMemberID="firstResponder"/>

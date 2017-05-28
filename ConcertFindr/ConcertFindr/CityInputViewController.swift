@@ -59,12 +59,14 @@ class CityInputViewController: UIViewController {
                     if let retrievedData = response.data {
                         let json = JSON(data: retrievedData)
                         self.metroID = String(describing: json["resultsPage"]["results"]["location"][0]["metroArea"]["id"])
-                        self.performSegue(withIdentifier: self.dateRangeIdentifier, sender: self)
+                        if (self.metroID != "null") {
+                            self.performSegue(withIdentifier: self.dateRangeIdentifier, sender: self)
+                        } else {
+                            // display error message
+                        }
                     }
                     self.loadingWheel.stopAnimating()
                 case .failure(let error):
-                    print("\(error)")
-                    print("failed")
                     self.loadingWheel.stopAnimating()
                 }
         };
