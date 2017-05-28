@@ -165,11 +165,11 @@ class DatePickerViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == CityNameSegue {
-            let viewController = segue.destination as! CityInputViewController
+            _ = segue.destination as! CityInputViewController
         } else if segue.identifier == MapViewSegue {
             let viewController = (segue.destination as! UITabBarController).viewControllers?[0] as! MapViewController
-            print("Printing self.pins")
-            print(pins)
+//            print("Printing self.pins")
+//            print(pins)
             viewController.annotations = self.pins
         }
     }
@@ -194,11 +194,7 @@ class DatePickerViewController: UIViewController {
                     if let retrievedData = response.data {
                         let json = JSON(data: retrievedData)
                         self.parseReceivedJSON(json: json)
-                        print("perform segue")
-//                        self.performSegue(withIdentifier: self.MapViewSegue, sender: self)
-
-                        //print("\(json)")
-
+                        self.performSegue(withIdentifier: self.MapViewSegue, sender: self)
                     }
                     self.gatheringConcerts.isHidden = true
                     self.loadingWheel.stopAnimating()
@@ -243,6 +239,5 @@ class DatePickerViewController: UIViewController {
             
             pins.append(ConcertPin(artist: artistsArray, startTime: startTime, ageRestriction: ageRestriction, venueName: venueName, listenURL: listenURL, ticketsURL: ticketsURL, latitude: latitude!, longitude: longitude!))
         }
-        self.performSegue(withIdentifier: self.MapViewSegue, sender: self)
     }
 }
