@@ -10,11 +10,19 @@ import UIKit
 
 class ConcertTableViewController: UITableViewController {
 
-    var concerts = [ConcertPin]()
+    //var concerts = [ConcertPin]()
+    
+    var concerts: [ConcertPin] {
+        get {
+            return (self.tabBarController!.viewControllers![0] as! MapViewController).annotations
+        }
+        set {
+            (self.tabBarController!.viewControllers![0] as! MapViewController).annotations = concerts
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

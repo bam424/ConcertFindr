@@ -167,10 +167,11 @@ class DatePickerViewController: UIViewController {
         if segue.identifier == CityNameSegue {
             _ = segue.destination as! CityInputViewController
         } else if segue.identifier == MapViewSegue {
-            let viewController = (segue.destination as! UITabBarController).viewControllers?[0] as! MapViewController
+            let tabBarControllers = segue.destination as! UITabBarController
+            let mapController = tabBarControllers.viewControllers?[0] as! MapViewController
 //            print("Printing self.pins")
 //            print(pins)
-            viewController.annotations = self.pins
+            mapController.annotations = self.pins
         }
     }
     
