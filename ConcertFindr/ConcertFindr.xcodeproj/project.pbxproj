@@ -16,6 +16,7 @@
 		9D156DDC1ED50C0F00C02337 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D156DDB1ED50C0F00C02337 /* MapViewController.swift */; };
 		9D156DDE1ED5106500C02337 /* CityInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D156DDD1ED5106500C02337 /* CityInputViewController.swift */; };
 		9D156DE01ED5125700C02337 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D156DDF1ED5125700C02337 /* DatePickerViewController.swift */; };
+		9DA2ABE21EDE280700255175 /* ConcertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2ABE11EDE280700255175 /* ConcertTableViewController.swift */; };
 		9DFB27831ED7A7ED00E81704 /* ConcertPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB27821ED7A7ED00E81704 /* ConcertPin.swift */; };
 		D9EA2053E236927BE713CD32 /* Pods_ConcertFindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A19B24A5B825A136C1BB1BB /* Pods_ConcertFindr.framework */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		9D156DDB1ED50C0F00C02337 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9D156DDD1ED5106500C02337 /* CityInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityInputViewController.swift; sourceTree = "<group>"; };
 		9D156DDF1ED5125700C02337 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		9DA2ABE11EDE280700255175 /* ConcertTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcertTableViewController.swift; sourceTree = "<group>"; };
 		9DFB27821ED7A7ED00E81704 /* ConcertPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcertPin.swift; sourceTree = "<group>"; };
 		B48670961D4D078A04F77AA2 /* Pods-ConcertFindr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConcertFindr.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConcertFindr/Pods-ConcertFindr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 				56DDC62E1ED4B33300B1CA10 /* AppDelegate.swift */,
 				56DDC6301ED4B33300B1CA10 /* ViewController.swift */,
 				56DDC6321ED4B33300B1CA10 /* Main.storyboard */,
+				9DA2ABE11EDE280700255175 /* ConcertTableViewController.swift */,
 				9D156DDF1ED5125700C02337 /* DatePickerViewController.swift */,
 				56DDC6351ED4B33300B1CA10 /* Assets.xcassets */,
 				56DDC6371ED4B33300B1CA10 /* LaunchScreen.storyboard */,
@@ -227,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DA2ABE21EDE280700255175 /* ConcertTableViewController.swift in Sources */,
 				9D156DDE1ED5106500C02337 /* CityInputViewController.swift in Sources */,
 				9D156DE01ED5125700C02337 /* DatePickerViewController.swift in Sources */,
 				562F04EC1ED792120082E06F /* TermsAndConditionsViewController.swift in Sources */,
