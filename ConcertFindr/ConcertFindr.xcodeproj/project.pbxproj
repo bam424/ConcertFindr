@@ -19,6 +19,7 @@
 		9DA2ABE21EDE280700255175 /* ConcertTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2ABE11EDE280700255175 /* ConcertTableViewController.swift */; };
 		9DA2ABE41EDE3BD100255175 /* ConcertDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2ABE31EDE3BD100255175 /* ConcertDetailsViewController.swift */; };
 		9DFB27831ED7A7ED00E81704 /* ConcertPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB27821ED7A7ED00E81704 /* ConcertPin.swift */; };
+		CFA3F1711EDE56E00024B438 /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3F1701EDE56E00024B438 /* VCMapView.swift */; };
 		D9EA2053E236927BE713CD32 /* Pods_ConcertFindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A19B24A5B825A136C1BB1BB /* Pods_ConcertFindr.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		9DA2ABE31EDE3BD100255175 /* ConcertDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcertDetailsViewController.swift; sourceTree = "<group>"; };
 		9DFB27821ED7A7ED00E81704 /* ConcertPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcertPin.swift; sourceTree = "<group>"; };
 		B48670961D4D078A04F77AA2 /* Pods-ConcertFindr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConcertFindr.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConcertFindr/Pods-ConcertFindr.release.xcconfig"; sourceTree = "<group>"; };
+		CFA3F1701EDE56E00024B438 /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				56DDC6371ED4B33300B1CA10 /* LaunchScreen.storyboard */,
 				56DDC63A1ED4B33300B1CA10 /* Info.plist */,
 				9D156DDB1ED50C0F00C02337 /* MapViewController.swift */,
+				CFA3F1701EDE56E00024B438 /* VCMapView.swift */,
 				9D156DDD1ED5106500C02337 /* CityInputViewController.swift */,
 				562F04EB1ED792120082E06F /* TermsAndConditionsViewController.swift */,
 				9DFB27821ED7A7ED00E81704 /* ConcertPin.swift */,
@@ -235,6 +238,7 @@
 			files = (
 				9DA2ABE21EDE280700255175 /* ConcertTableViewController.swift in Sources */,
 				9D156DDE1ED5106500C02337 /* CityInputViewController.swift in Sources */,
+				CFA3F1711EDE56E00024B438 /* VCMapView.swift in Sources */,
 				9D156DE01ED5125700C02337 /* DatePickerViewController.swift in Sources */,
 				562F04EC1ED792120082E06F /* TermsAndConditionsViewController.swift in Sources */,
 				9DA2ABE41EDE3BD100255175 /* ConcertDetailsViewController.swift in Sources */,
