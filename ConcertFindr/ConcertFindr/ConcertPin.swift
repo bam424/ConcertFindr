@@ -10,6 +10,7 @@ import MapKit
 class ConcertPin: NSObject, MKAnnotation {
     let coordinate: CLLocationCoordinate2D
     //let image: UIImage
+    let title: String?
     let artist: [String]
     let startTime: String
     let ageRestriction: String
@@ -30,9 +31,8 @@ class ConcertPin: NSObject, MKAnnotation {
         self.ticketsURL = ticketsURL
         
         self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-
         
-        //This is necessary if latitude and longitude are passed in
-        //coordinate = CLLocationCoordinate2D(latitude: <#T##CLLocationDegrees#>, longitude: <#T##CLLocationDegrees#>)
+        self.title = venueName //Required for MKAnnotation; delete venueName?
+
     }
 }

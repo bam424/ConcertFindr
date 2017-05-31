@@ -210,7 +210,7 @@ class DatePickerViewController: UIViewController {
         print("Parsing json")
         for singleConcert in json["resultsPage"]["results"]["event"] {
             let parsedConcert = singleConcert.1
-            
+
             //There are sometimes multiple artists
             var artistsArray = [String]()
             var listenURL = ""

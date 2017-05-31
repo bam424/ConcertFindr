@@ -12,14 +12,11 @@ import MapKit
 class MapViewController: UIViewController {
     var annotations = [ConcertPin]() //Array of concert pin objects to populate map
    
-
-    //Make sure to redo this when pulling
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewWillAppear(_ animated: Bool) {
         
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +35,7 @@ class MapViewController: UIViewController {
 
     //regionRadius: what the zoom level should be
     let regionRadius: CLLocationDistance = 1000
+    
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
