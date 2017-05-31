@@ -49,6 +49,17 @@ class ConcertTableViewController: UITableViewController {
         cell.detailTextLabel?.text = concert.venueName
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Details" {
+            let cell = sender as! UITableViewCell
+            let indexPath = self.tableView.indexPath(for: cell)
+            let detail = segue.destination as! ConcertDetailsViewController
+            let concert = self.concerts[(indexPath?.row)!]
+            detail.concertTitle = concert.venueName
+            detail.artistID = concert.artistID
+        }
+    }
 
     /*
     override func numberOfSections(in tableView: UITableView) -> Int {

@@ -215,10 +215,12 @@ class DatePickerViewController: UIViewController {
             //There are sometimes multiple artists
             var artistsArray = [String]()
             var listenURL = ""
+            var artistID = ""
             for artist in parsedConcert["performance"] {
                 artistsArray.append(String(describing: artist.1["displayName"]))
                 if artist.1["billingIndex"] == 1 {
                     listenURL = String(describing: artist.1["artist"]["uri"])
+                    artistID = String(describing: artist.1["artist"]["id"])
                 }
                 
             }
@@ -238,7 +240,7 @@ class DatePickerViewController: UIViewController {
             let longitude = Double(String(describing:parsedConcert["location"]["lng"]))
 
             
-            pins.append(ConcertPin(artist: artistsArray, startTime: startTime, ageRestriction: ageRestriction, venueName: venueName, listenURL: listenURL, ticketsURL: ticketsURL, latitude: latitude!, longitude: longitude!))
+            pins.append(ConcertPin(artist: artistsArray, artistID: artistID, startTime: startTime, ageRestriction: ageRestriction, venueName: venueName, listenURL: listenURL, ticketsURL: ticketsURL, latitude: latitude!, longitude: longitude!))
         }
     }
 }
