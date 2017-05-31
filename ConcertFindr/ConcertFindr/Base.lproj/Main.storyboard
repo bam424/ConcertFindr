@@ -169,6 +169,7 @@
                     <tabBarItem key="tabBarItem" title="Map" image="002-map-location" id="SgJ-Cc-czW"/>
                     <connections>
                         <outlet property="mapView" destination="ETl-e0-Uow" id="bKm-xs-ytO"/>
+                        <segue destination="YdB-1S-NHi" kind="show" identifier="MapToDetails" id="VSd-f3-rqc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X7y-95-OX8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -933,4 +934,7 @@ Designated Agent to Receive Notification of Claimed Infringement: Paul Herdemian
         <image name="songkick_logo" width="460" height="124"/>
         <image name="to" width="470" height="480"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="VSd-f3-rqc"/>
+    </inferredMetricsTieBreakers>
 </document>

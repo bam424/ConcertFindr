@@ -31,4 +31,22 @@ extension MapViewController: MKMapViewDelegate {
         }
         return nil
     }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView {
+            print("performing segue")
+            performSegue(withIdentifier: "MapToDetails", sender: view)
+        }
+    }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if (segue.identifier == "toTheMoon" )
+//        {
+//            var ikinciEkran = segue.destinationViewController as! DetailViewController
+//            
+//            ikinciEkran.tekelName = (sender as! MKAnnotationView).annotation!.title
+//            
+//        }
+//        
+//    }
 }
