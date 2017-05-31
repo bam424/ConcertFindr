@@ -12,6 +12,7 @@ class ConcertPin: NSObject, MKAnnotation {
     //let image: UIImage
     let title: String?
     let artist: [String]
+    let artistID: String
     let startTime: String
     let ageRestriction: String
     let venueName: String
@@ -20,10 +21,11 @@ class ConcertPin: NSObject, MKAnnotation {
     
     //Turn image into UIImage within init
     //Turn lat and long into CLLocation
-    init(artist: [String], startTime: String, ageRestriction: String, venueName: String, listenURL: String, ticketsURL: String, latitude: Double, longitude: Double) {
+    init(artist: [String], artistID: String, startTime: String, ageRestriction: String, venueName: String, listenURL: String, ticketsURL: String, latitude: Double, longitude: Double) {
         
         //self.image = image
         self.artist = artist
+        self.artistID = artistID
         self.startTime = startTime
         self.ageRestriction = ageRestriction
         self.venueName = venueName

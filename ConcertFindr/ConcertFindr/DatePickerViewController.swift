@@ -167,10 +167,11 @@ class DatePickerViewController: UIViewController {
         if segue.identifier == CityNameSegue {
             _ = segue.destination as! CityInputViewController
         } else if segue.identifier == MapViewSegue {
-            let viewController = (segue.destination as! UITabBarController).viewControllers?[0] as! MapViewController
+            let tabBarControllers = segue.destination as! UITabBarController
+            let mapController = tabBarControllers.viewControllers?[0] as! MapViewController
 //            print("Printing self.pins")
 //            print(pins)
-            viewController.annotations = self.pins
+            mapController.annotations = self.pins
         }
     }
     
@@ -214,10 +215,12 @@ class DatePickerViewController: UIViewController {
             //There are sometimes multiple artists
             var artistsArray = [String]()
             var listenURL = ""
+            var artistID = ""
             for artist in parsedConcert["performance"] {
                 artistsArray.append(String(describing: artist.1["displayName"]))
                 if artist.1["billingIndex"] == 1 {
                     listenURL = String(describing: artist.1["artist"]["uri"])
+                    artistID = String(describing: artist.1["artist"]["id"])
                 }
                 
             }
@@ -237,7 +240,7 @@ class DatePickerViewController: UIViewController {
             let longitude = Double(String(describing:parsedConcert["location"]["lng"]))
 
             
-            pins.append(ConcertPin(artist: artistsArray, startTime: startTime, ageRestriction: ageRestriction, venueName: venueName, listenURL: listenURL, ticketsURL: ticketsURL, latitude: latitude!, longitude: longitude!))
+            pins.append(ConcertPin(artist: artistsArray, artistID: artistID, startTime: startTime, ageRestriction: ageRestriction, venueName: venueName, listenURL: listenURL, ticketsURL: ticketsURL, latitude: latitude!, longitude: longitude!))
         }
     }
 }
