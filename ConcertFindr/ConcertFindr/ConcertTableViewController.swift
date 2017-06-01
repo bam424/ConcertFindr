@@ -56,7 +56,7 @@ class ConcertTableViewController: UITableViewController {
             let indexPath = self.tableView.indexPath(for: cell)
             let detail = segue.destination as! ConcertDetailsViewController
             let concert = self.concerts[(indexPath?.row)!]
-            detail.concertTitle = concert.venueName
+            detail.concertTitle = concert.artist
             detail.artistID = concert.artistID
         }
     }

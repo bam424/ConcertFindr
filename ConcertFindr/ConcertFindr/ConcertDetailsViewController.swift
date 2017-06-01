@@ -11,14 +11,26 @@ import UIKit
 class ConcertDetailsViewController: UIViewController {
 
  
+
     @IBOutlet weak var concertTitleLabel: UILabel!
-    var concertTitle : String!
+    @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var startTimeLabel: UILabel!
+    @IBOutlet weak var eventDateLabel: UILabel!
+    @IBOutlet weak var ageRestrictionLabel: UILabel!
+    @IBOutlet weak var venueLabel: UILabel!
+    
+    var concertTitle : [String]
     var artistID : String!
   //  var imgURL = "http://images.sk-static.com/images/media/profile_images/artists/\(artistID)/huge_avatar"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.concertTitleLabel.text = concertTitle
+        self.artistLabel.text = ""
+        self.startTimeLabel.text = ""
+        self.eventDateLabel.text = ""
+        self.ageRestrictionLabel.text = ""
+        self.venueLabel.text = ""
         
 
         // Do any additional setup after loading the view.

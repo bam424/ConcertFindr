@@ -231,7 +231,7 @@ class DatePickerViewController: UIViewController {
             if (ageRestriction == "null") {
                 ageRestriction = "No age restriction"
             }
-            var venueName = String(describing: parsedConcert["displayName"])
+            var venueName = String(describing: parsedConcert["venue"]["displayName"])
             if (venueName == "null") {
                 venueName = "No venue name"
             }
