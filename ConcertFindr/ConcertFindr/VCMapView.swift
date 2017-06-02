@@ -41,7 +41,7 @@ extension MapViewController: MKMapViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MapToDetails" {
-            var vc = segue.destination as! ConcertDetailsViewController
+            var detailsPage = segue.destination as! ConcertDetailsViewController
             
         }
     }

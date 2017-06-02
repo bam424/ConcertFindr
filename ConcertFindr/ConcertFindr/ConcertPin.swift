@@ -37,6 +37,5 @@ class ConcertPin: NSObject, MKAnnotation {
         self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
         self.title = venueName //Required for MKAnnotation; delete venueName?
-
     }
 }

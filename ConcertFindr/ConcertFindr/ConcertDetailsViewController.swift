@@ -40,12 +40,12 @@ class ConcertDetailsViewController: UIViewController {
         self.eventDateLabel.text = eventDate
         self.ageRestrictionLabel.text = ageRestriction
         self.venueLabel.text = venue
-        imgURLString = "http://images.sk-static.com/images/media/profile_images/artists/\(artistID!)/huge_avatar"
-        let imgURL = URL(string: imgURLString)
-        let data = try? Data(contentsOf: imgURL!)
-        artistImageView.image = UIImage(data: data!)
-        
-        // Do any additional setup after loading the view.
+        if artistID != nil {
+            imgURLString = "http://images.sk-static.com/images/media/profile_images/artists/\(artistID!)/huge_avatar"
+            let imgURL = URL(string: imgURLString)
+            let data = try? Data(contentsOf: imgURL!)
+            artistImageView.image = UIImage(data: data!)
+        }
     }
 
     override func didReceiveMemoryWarning() {
