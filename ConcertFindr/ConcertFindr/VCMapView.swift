@@ -39,14 +39,10 @@ extension MapViewController: MKMapViewDelegate {
         }
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if (segue.identifier == "toTheMoon" )
-//        {
-//            var ikinciEkran = segue.destinationViewController as! DetailViewController
-//            
-//            ikinciEkran.tekelName = (sender as! MKAnnotationView).annotation!.title
-//            
-//        }
-//        
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MapToDetails" {
+            var vc = segue.destination as! ConcertDetailsViewController
+            
+        }
+    }
 }
