@@ -224,7 +224,11 @@ class DatePickerViewController: UIViewController {
                 }
                 
             }
-            let startTime = String(describing: parsedConcert["start"]["time"])
+            let eventDate = String(describing: parsedConcert["start"]["date"])
+            var startTime = String(describing: parsedConcert["start"]["time"])
+            if(startTime == "null") {
+                startTime = "No given start time"
+            }
             let ticketsURL = String(describing: parsedConcert["uri"])
             
             var ageRestriction = String(describing: parsedConcert["ageRestriction"])
@@ -240,7 +244,7 @@ class DatePickerViewController: UIViewController {
             let longitude = Double(String(describing:parsedConcert["location"]["lng"]))
 
             
-            pins.append(ConcertPin(artist: artistsArray, artistID: artistID, startTime: startTime, ageRestriction: ageRestriction, venueName: venueName, listenURL: listenURL, ticketsURL: ticketsURL, latitude: latitude!, longitude: longitude!))
+            pins.append(ConcertPin(artist: artistsArray, artistID: artistID, startTime: startTime, eventDate: eventDate, ageRestriction: ageRestriction, venueName: venueName, listenURL: listenURL, ticketsURL: ticketsURL, latitude: latitude!, longitude: longitude!))
         }
     }
 }

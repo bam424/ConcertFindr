@@ -21,6 +21,7 @@ class ConcertTableViewController: UITableViewController {
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -46,7 +47,7 @@ class ConcertTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ConcertCell", for: indexPath)
         let concert = concerts[indexPath.row]
         cell.textLabel?.text = concert.artist[0]
-        cell.detailTextLabel?.text = concert.venueName
+        cell.detailTextLabel?.text = concert.venueName + ", " + concert.eventDate + ", " + concert.startTime
         return cell
     }
     
@@ -56,8 +57,28 @@ class ConcertTableViewController: UITableViewController {
             let indexPath = self.tableView.indexPath(for: cell)
             let detail = segue.destination as! ConcertDetailsViewController
             let concert = self.concerts[(indexPath?.row)!]
-            detail.concertTitle = concert.artist
+            var artistString = ""
+            var artistCounter = 1
+            for artist in concert.artist {
+                if (concert.artist.count > 1) {
+                    if(artistCounter == concert.artist.count) {
+                        artistString = artistString + artist
+                    } else {
+                        artistString = artistString + artist + ", "
+                        artistCounter = artistCounter + 1
+                    }
+                } else {
+                    artistString = artist
+                }
+                
+            }
+            detail.concertTitle = artistString
             detail.artistID = concert.artistID
+            detail.eventDate = concert.eventDate
+            detail.startTime = concert.startTime
+            detail.ageRestriction = concert.ageRestriction
+            detail.venue = concert.venueName
+            detail.ticketURL = concert.ticketsURL
         }
     }
 

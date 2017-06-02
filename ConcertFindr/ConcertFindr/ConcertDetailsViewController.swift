@@ -18,21 +18,33 @@ class ConcertDetailsViewController: UIViewController {
     @IBOutlet weak var eventDateLabel: UILabel!
     @IBOutlet weak var ageRestrictionLabel: UILabel!
     @IBOutlet weak var venueLabel: UILabel!
+    @IBOutlet weak var artistImageView: UIImageView!
     
-    var concertTitle : [String]
+    @IBAction func buyTicketsButton(_ sender: UIButton) {
+        UIApplication.shared.open(NSURL(string:"\(ticketURL!)")! as URL, options: [:], completionHandler: nil)
+    }
+    var concertTitle : String!
     var artistID : String!
-  //  var imgURL = "http://images.sk-static.com/images/media/profile_images/artists/\(artistID)/huge_avatar"
+    var startTime : String!
+    var eventDate : String!
+    var ageRestriction : String!
+    var venue : String!
+    var ticketURL : String!
+    var imgURLString : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.concertTitleLabel.text = concertTitle
-        self.artistLabel.text = ""
-        self.startTimeLabel.text = ""
-        self.eventDateLabel.text = ""
-        self.ageRestrictionLabel.text = ""
-        self.venueLabel.text = ""
+        self.artistLabel.text = concertTitle
+        self.startTimeLabel.text = startTime
+        self.eventDateLabel.text = eventDate
+        self.ageRestrictionLabel.text = ageRestriction
+        self.venueLabel.text = venue
+        imgURLString = "http://images.sk-static.com/images/media/profile_images/artists/\(artistID!)/huge_avatar"
+        let imgURL = URL(string: imgURLString)
+        let data = try? Data(contentsOf: imgURL!)
+        artistImageView.image = UIImage(data: data!)
         
-
         // Do any additional setup after loading the view.
     }
 
