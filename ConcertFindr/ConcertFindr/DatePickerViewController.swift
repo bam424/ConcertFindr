@@ -174,7 +174,6 @@ class DatePickerViewController: UIViewController {
         } else if segue.identifier == MapViewSegue {
             let tabBarControllers = segue.destination as! UITabBarController
             let mapController = tabBarControllers.viewControllers?[0] as! MapViewController
-            //print("metroID: \(metroID))
             mapController.annotations = self.pins
         }
     }

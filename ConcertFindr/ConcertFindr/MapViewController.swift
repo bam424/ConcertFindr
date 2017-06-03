@@ -21,8 +21,13 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         
         //Initial pointer - change this upon api call finished
-        let initialLocation = CLLocation(latitude: 47.6062, longitude: -122.3321)
+        var initialLocation = CLLocation(latitude: 47.6062, longitude: -122.3321)
+        
         if annotations.count > 0 {
+            print(annotations[0].coordinate)
+            let initLat = annotations[0].coordinate.latitude
+            let initLong = annotations[0].coordinate.longitude
+            initialLocation = CLLocation(latitude: initLat, longitude: initLong)
             mapView.addAnnotations(annotations)
             print("Added pin")
         } else {
