@@ -17,9 +17,13 @@ class CityInputViewController: UIViewController {
     
     @IBOutlet weak var loadingWheel: UIActivityIndicatorView!
     @IBOutlet weak var cityNameInputField: UITextField!
+    @IBOutlet weak var noCityResultImage: UIImageView!
+    
+    
     private var dateRangeIdentifier: String = "DateRangeInputSegue"
     
     override func viewDidLoad() {
+        noCityResultImage.isHidden = true
         loadingWheel.hidesWhenStopped = true
         loadingWheel.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         loadingWheel.center = view.center
@@ -62,12 +66,13 @@ class CityInputViewController: UIViewController {
                         if (self.metroID != "null") {
                             self.performSegue(withIdentifier: self.dateRangeIdentifier, sender: self)
                         } else {
-                            // display error message
+                            self.noCityResultImage.isHidden = false
                         }
                     }
                     self.loadingWheel.stopAnimating()
                 case .failure(let error):
                     self.loadingWheel.stopAnimating()
+                    self.noCityResultImage.isHidden = false
                 }
         };
     }

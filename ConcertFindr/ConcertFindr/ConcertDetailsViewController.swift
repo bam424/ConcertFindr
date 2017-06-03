@@ -11,7 +11,7 @@ import UIKit
 class ConcertDetailsViewController: UIViewController {
 
  
-
+    @IBOutlet weak var imageNotAvailableImage: UIImageView!
     @IBOutlet weak var concertTitleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var startTimeLabel: UILabel!
@@ -44,7 +44,10 @@ class ConcertDetailsViewController: UIViewController {
             imgURLString = "http://images.sk-static.com/images/media/profile_images/artists/\(artistID!)/huge_avatar"
             let imgURL = URL(string: imgURLString)
             let data = try? Data(contentsOf: imgURL!)
-            artistImageView.image = UIImage(data: data!)
+            if (data?.description != "135 bytes") {
+                artistImageView.image = UIImage(data: data!)
+                imageNotAvailableImage.isHidden = true
+            }
         }
     }
 

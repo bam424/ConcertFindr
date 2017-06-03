@@ -21,9 +21,12 @@ class ConcertTableViewController: UITableViewController {
         }
     }
     
+    var dateFormatter: DateFormatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dateFormatter.dateFormat = "EEE, MM dd"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -47,7 +50,7 @@ class ConcertTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ConcertCell", for: indexPath)
         let concert = concerts[indexPath.row]
         cell.textLabel?.text = concert.artist[0]
-        cell.detailTextLabel?.text = concert.venueName + ", " + concert.eventDate + ", " + concert.startTime
+        cell.detailTextLabel?.text = "@ \(concert.venueName) on \(concert.eventDate) \(concert.startTime)"
         return cell
     }
     

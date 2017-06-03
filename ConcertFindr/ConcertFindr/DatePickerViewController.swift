@@ -21,6 +21,8 @@ class DatePickerViewController: UIViewController {
     @IBOutlet weak var StartDateInputField: UITextField!
     @IBOutlet weak var TermsAndConditionLabel: UILabel!
     
+    @IBOutlet weak var noDateResultImage: UIImageView!
+    
     @IBOutlet weak var loadingWheel: UIActivityIndicatorView!
     @IBOutlet weak var EndDateInputField: UITextField!
     @IBOutlet weak var gatheringConcerts: UIImageView!
@@ -30,6 +32,9 @@ class DatePickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        noDateResultImage.isHidden = true
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.full
         
@@ -176,6 +181,7 @@ class DatePickerViewController: UIViewController {
     }
     
     @IBAction func SearchConcertsButton(_ sender: Any) {
+        noDateResultImage.isHidden = true
         gatheringConcerts.isHidden = false
         loadingWheel.startAnimating()
         
@@ -197,18 +203,32 @@ class DatePickerViewController: UIViewController {
                         self.parseReceivedJSON(json: json)
                         self.performSegue(withIdentifier: self.MapViewSegue, sender: self)
                     }
+                    sleep(4) // sleep for 4 seconds for dramatic loading wheel animation
                     self.gatheringConcerts.isHidden = true
                     self.loadingWheel.stopAnimating()
-                case .failure(let error):
+                case .failure( _):
                     self.gatheringConcerts.isHidden = true
                     self.loadingWheel.stopAnimating()
+                    self.noDateResultImage.isHidden = false
                 }
         };
 
     }
     
     func parseReceivedJSON(json: JSON) {
-        print("Parsing json")
+        let dateFromFormatter = DateFormatter()
+        dateFromFormatter.locale = NSLocale(localeIdentifier: "en") as Locale!
+        dateFromFormatter.dateFormat = "yyyy-MM-dd"
+        let dateToFormatter = DateFormatter()
+        dateToFormatter.locale = NSLocale(localeIdentifier: "en") as Locale!
+        dateToFormatter.dateFormat = "EEE, MMM dd"
+        
+        let timeFromFormatter = DateFormatter()
+        timeFromFormatter.locale = NSLocale(localeIdentifier: "en") as Locale!
+        timeFromFormatter.dateFormat = "HH:mm:ss"
+        let timeToFormatter = DateFormatter()
+        timeToFormatter.locale = NSLocale(localeIdentifier: "en") as Locale!
+        timeToFormatter.dateFormat = "h:mma z"
         for singleConcert in json["resultsPage"]["results"]["event"] {
             let parsedConcert = singleConcert.1
 
@@ -224,11 +244,18 @@ class DatePickerViewController: UIViewController {
                 }
                 
             }
-            let eventDate = String(describing: parsedConcert["start"]["date"])
+            var eventDate = String(describing: parsedConcert["start"]["date"])
+            let theDate = dateFromFormatter.date(from: eventDate)
+            eventDate = dateToFormatter.string(from: theDate!)
+            
             var startTime = String(describing: parsedConcert["start"]["time"])
             if(startTime == "null") {
                 startTime = "No given start time"
+            } else {
+                let theStartTime = timeFromFormatter.date(from: startTime)
+                startTime = timeToFormatter.string(from: theStartTime!)
             }
+            
             let ticketsURL = String(describing: parsedConcert["uri"])
             
             var ageRestriction = String(describing: parsedConcert["ageRestriction"])
@@ -242,6 +269,7 @@ class DatePickerViewController: UIViewController {
             
             let latitude = Double(String(describing: parsedConcert["location"]["lat"]))
             let longitude = Double(String(describing:parsedConcert["location"]["lng"]))
+            
 
             
             pins.append(ConcertPin(artist: artistsArray, artistID: artistID, startTime: startTime, eventDate: eventDate, ageRestriction: ageRestriction, venueName: venueName, listenURL: listenURL, ticketsURL: ticketsURL, latitude: latitude!, longitude: longitude!))
