@@ -174,8 +174,7 @@ class DatePickerViewController: UIViewController {
         } else if segue.identifier == MapViewSegue {
             let tabBarControllers = segue.destination as! UITabBarController
             let mapController = tabBarControllers.viewControllers?[0] as! MapViewController
-//            print("Printing self.pins")
-//            print(pins)
+            //print("metroID: \(metroID))
             mapController.annotations = self.pins
         }
     }
@@ -270,9 +269,9 @@ class DatePickerViewController: UIViewController {
             let latitude = Double(String(describing: parsedConcert["location"]["lat"]))
             let longitude = Double(String(describing:parsedConcert["location"]["lng"]))
             
-
-            
-            pins.append(ConcertPin(artist: artistsArray, artistID: artistID, startTime: startTime, eventDate: eventDate, ageRestriction: ageRestriction, venueName: venueName, listenURL: listenURL, ticketsURL: ticketsURL, latitude: latitude!, longitude: longitude!))
+            if (latitude != nil && longitude != nil) {
+               pins.append(ConcertPin(artist: artistsArray, artistID: artistID, startTime: startTime, eventDate: eventDate, ageRestriction: ageRestriction, venueName: venueName, listenURL: listenURL, ticketsURL: ticketsURL, latitude: latitude!, longitude: longitude!))
+            }
         }
     }
 }
