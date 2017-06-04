@@ -36,6 +36,9 @@ class MapViewController: UIViewController {
                 newAnnotation.title = "\(annotation.artist.joined(separator: ", ")) @ \(annotation.venueName)"
                 newAnnotation.subtitle = "Age restriction: \(annotation.ageRestriction)"
                 newAnnotation.coordinate = annotation.coordinate
+                print(annotation.artistID)
+                print(annotation.venueName)
+                print(annotation.eventDate)
                 mapView.addAnnotation(newAnnotation)
             }
         } else {
