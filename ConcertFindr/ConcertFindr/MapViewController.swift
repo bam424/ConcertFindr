@@ -9,6 +9,10 @@ import UIKit
 
 import MapKit
 
+class ConcertAnnotation : MKPointAnnotation {
+    var concert : ConcertPin?
+}
+
 class MapViewController: UIViewController {
     var annotations = [ConcertPin]() //Array of concert pin objects to populate map
    
@@ -24,19 +28,26 @@ class MapViewController: UIViewController {
         var initialLocation = CLLocation(latitude: 47.6062, longitude: -122.3321)
         
         if annotations.count > 0 {
-            print(annotations[0].coordinate)
             let initLat = annotations[0].coordinate.latitude
             let initLong = annotations[0].coordinate.longitude
             initialLocation = CLLocation(latitude: initLat, longitude: initLong)
-            mapView.addAnnotations(annotations)
-            print("Added pin")
+            for annotation in annotations {
+                let newAnnotation: ConcertAnnotation = ConcertAnnotation()
+                newAnnotation.title = "\(annotation.artist.joined(separator: ", ")) @ \(annotation.venueName)"
+                newAnnotation.subtitle = "Age restriction: \(annotation.ageRestriction)"
+                newAnnotation.coordinate = annotation.coordinate
+                mapView.addAnnotation(newAnnotation)
+            }
         } else {
-            print("Did not add pins")
-            print(annotations)
+            let alert = UIAlertController(title: "No Concert Data", message: "Could not find concerts with your search.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
         
         centerMapOnLocation(location: initialLocation)
     }
+    
+    
 
     //regionRadius: what the zoom level should be
     let regionRadius: CLLocationDistance = 1000
