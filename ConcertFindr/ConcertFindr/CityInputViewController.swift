@@ -10,7 +10,20 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class CityInputViewController: UIViewController {
+// Put this piece of code anywhere you like
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+class CityInputViewController: UIViewController, UITextFieldDelegate {
 
     var metroID: String = ""
     private var SongKickAPIKey: String = "HqtbfXIKRDQWYRLi"
@@ -28,13 +41,18 @@ class CityInputViewController: UIViewController {
         loadingWheel.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
         loadingWheel.center = view.center
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround() 
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
         swipeLeft.direction = UISwipeGestureRecognizerDirection.left
         self.view.addGestureRecognizer(swipeLeft)
-
+        self.cityNameInputField.delegate = self
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     func respondToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {

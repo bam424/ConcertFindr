@@ -33,6 +33,8 @@ class DatePickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround() 
+        
         noDateResultImage.isHidden = true
         
         let dateFormatter = DateFormatter()
