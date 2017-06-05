@@ -7,10 +7,11 @@
 import Foundation
 import MapKit
 
-class ConcertPin: NSObject, MKAnnotation {
+class ConcertPin: NSObject {
     let coordinate: CLLocationCoordinate2D
     //let image: UIImage
-    let title: String?
+//    let title: String?
+//    let subtitle: String?
     let artist: [String]
     let artistID: String
     let startTime: String
@@ -36,6 +37,7 @@ class ConcertPin: NSObject, MKAnnotation {
         
         self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
-        self.title = venueName //Required for MKAnnotation; delete venueName?
+//        self.title = "\(artist.joined(separator: ", ")) @ \(venueName)"
+//        self.subtitle = "Age restriction: \(ageRestriction)"
     }
 }

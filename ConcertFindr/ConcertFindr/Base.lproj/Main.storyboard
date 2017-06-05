@@ -77,11 +77,8 @@
                                     <constraint firstAttribute="width" secondItem="dpB-DA-osC" secondAttribute="height" multiplier="343:51" id="JFX-Ax-6kb"/>
                                 </constraints>
                             </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ETl-e0-Uow">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ETl-e0-Uow" customClass="Map">
                                 <rect key="frame" x="0.0" y="87" width="375" height="531"/>
-                                <connections>
-                                    <outlet property="delegate" destination="EDb-e1-Hrl" id="pR9-UB-IKV"/>
-                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
