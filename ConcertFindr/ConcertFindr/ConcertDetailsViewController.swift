@@ -37,7 +37,7 @@ class ConcertDetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if (fromMap) {
-            let closeBtn: UIButton = UIButton(frame: CGRect(x: 0, y: 10, width: 100, height: 50))
+            let closeBtn: UIButton = UIButton(frame: CGRect(x: 0, y: 10, width: 70, height: 50))
             closeBtn.setTitle("Close", for: .normal)
 //            closeBtn.titleLabel?.textColor = UIColor.black
             closeBtn.addTarget(self, action: #selector(closeView), for: .touchUpInside)
