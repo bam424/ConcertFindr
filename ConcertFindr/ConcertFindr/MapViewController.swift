@@ -15,7 +15,8 @@ class ConcertAnnotation : MKPointAnnotation {
 
 class MapViewController: UIViewController {
     var annotations = [ConcertPin]() //Array of concert pin objects to populate map
-   
+    var selectedAnnotation: ConcertAnnotation!
+    
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,7 +24,7 @@ class MapViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        mapView.delegate = self
         //Initial pointer - change this upon api call finished
         var initialLocation = CLLocation(latitude: 47.6062, longitude: -122.3321)
         
@@ -36,9 +37,7 @@ class MapViewController: UIViewController {
                 newAnnotation.title = "\(annotation.artist.joined(separator: ", ")) @ \(annotation.venueName)"
                 newAnnotation.subtitle = "Age restriction: \(annotation.ageRestriction)"
                 newAnnotation.coordinate = annotation.coordinate
-                print(annotation.artistID)
-                print(annotation.venueName)
-                print(annotation.eventDate)
+                newAnnotation.concert = annotation
                 mapView.addAnnotation(newAnnotation)
             }
         } else {
@@ -46,32 +45,15 @@ class MapViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-        
         centerMapOnLocation(location: initialLocation)
     }
     
     
 
-    //regionRadius: what the zoom level should be
     let regionRadius: CLLocationDistance = 4500
     
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
-        
-        //After API call, add to map
-        //Loop through all data points -> turn into ConcertPin object
-        //mapView.addAnnotation(<#T##annotation: MKAnnotation##MKAnnotation#>)
-//        mapView.addAnnotations([""])
     }
-    
-    //Get information - pass information to details page
-    /*
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
