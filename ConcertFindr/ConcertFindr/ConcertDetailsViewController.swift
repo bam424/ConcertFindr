@@ -32,6 +32,26 @@ class ConcertDetailsViewController: UIViewController {
     var ticketURL : String!
     var imgURLString : String!
     
+    var fromMap : Bool!
+    weak var closeBtn: UIButton!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if (fromMap) {
+            let closeBtn: UIButton = UIButton(frame: CGRect(x: 0, y: 10, width: 100, height: 50))
+            closeBtn.setTitle("Close", for: .normal)
+//            closeBtn.titleLabel?.textColor = UIColor.black
+            closeBtn.addTarget(self, action: #selector(closeView), for: .touchUpInside)
+            closeBtn.tag = 1
+            self.view.addSubview(closeBtn)
+            self.closeBtn = closeBtn
+        }
+    }
+    
+    func closeView(sender: UIButton!) {
+        guard sender == self.closeBtn else {return}
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.concertTitleLabel.text = concertTitle

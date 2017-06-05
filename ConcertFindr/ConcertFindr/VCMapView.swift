@@ -50,6 +50,7 @@ extension MapViewController: MKMapViewDelegate {
             detailsPage.eventDate = concertDetails?.eventDate
             detailsPage.ticketURL = concertDetails?.ticketsURL
             detailsPage.artistID = concertDetails?.artistID
+            detailsPage.fromMap = true;
         }
     }
 }

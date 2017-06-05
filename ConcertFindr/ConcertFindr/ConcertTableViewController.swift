@@ -82,6 +82,7 @@ class ConcertTableViewController: UITableViewController {
             detail.ageRestriction = concert.ageRestriction
             detail.venue = concert.venueName
             detail.ticketURL = concert.ticketsURL
+            detail.fromMap = false
         }
     }
 
