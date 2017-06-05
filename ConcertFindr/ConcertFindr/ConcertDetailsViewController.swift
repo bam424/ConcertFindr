@@ -21,7 +21,12 @@ class ConcertDetailsViewController: UIViewController {
     @IBOutlet weak var artistImageView: UIImageView!
     
     @IBAction func buyTicketsButton(_ sender: UIButton) {
-        UIApplication.shared.open(NSURL(string:"\(ticketURL!)")! as URL, options: [:], completionHandler: nil)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(NSURL(string:"\(ticketURL!)")! as URL, options: [:], completionHandler: nil)
+        } else {
+            let url = URL(string:"\(ticketURL!)")!
+            UIApplication.shared.openURL(url)
+        }
     }
     var concertTitle : String!
     var artistID : String!
