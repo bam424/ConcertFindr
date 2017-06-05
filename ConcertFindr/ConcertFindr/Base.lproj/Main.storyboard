@@ -103,23 +103,6 @@
             </objects>
             <point key="canvasLocation" x="3160.8000000000002" y="-1583.6581709145428"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="AJj-lG-UCF">
-            <objects>
-                <navigationController id="fny-cY-DoK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Ova-YP-cUb"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7G7-Tl-NnF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="EDb-e1-Hrl" kind="relationship" relationship="rootViewController" id="ood-ER-qAR"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M3W-PM-hjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3194" y="-2489"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="diF-se-MrP">
             <objects>
@@ -975,7 +958,6 @@ Designated Agent to Receive Notification of Claimed Infringement: Paul Herdemian
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="d47-gd-SyM"/>
-        <segue reference="wKH-J0-RY8"/>
-        <segue reference="VSd-f3-rqc"/>
+        <segue reference="30T-hl-KeW"/>
     </inferredMetricsTieBreakers>
 </document>

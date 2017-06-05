@@ -42,11 +42,14 @@ extension MapViewController: MKMapViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MapToDetails" {
             let detailsPage = segue.destination as! ConcertDetailsViewController
-            detailsPage.concertTitle = selectedAnnotation.title
-            detailsPage.ageRestriction = selectedAnnotation.concert?.ageRestriction
-            detailsPage.startTime = selectedAnnotation.concert?.startTime
-            detailsPage.eventDate = selectedAnnotation.concert?.eventDate
-            detailsPage.ticketURL = selectedAnnotation.concert?.ticketsURL
+            let concertDetails = selectedAnnotation.concert
+            detailsPage.concertTitle = concertDetails?.artist.joined(separator: ", ")
+            detailsPage.ageRestriction = concertDetails?.ageRestriction
+            detailsPage.venue = concertDetails?.venueName
+            detailsPage.startTime = concertDetails?.startTime
+            detailsPage.eventDate = concertDetails?.eventDate
+            detailsPage.ticketURL = concertDetails?.ticketsURL
+            detailsPage.artistID = concertDetails?.artistID
         }
     }
 }
