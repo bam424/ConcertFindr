@@ -97,7 +97,7 @@ class ConcertDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func showShareOptions(_ sender: Any) {
-        let actionSheet = UIAlertController(title: "", message: "Share this Event", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let actionSheet = UIAlertController(title: "", message: "Share to Social Media", preferredStyle: UIAlertControllerStyle.actionSheet)
         let twitterButton = UIAlertAction(title: "Share on Twitter", style: UIAlertActionStyle.default) { (action) -> Void in
             if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
                 let twitterVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
