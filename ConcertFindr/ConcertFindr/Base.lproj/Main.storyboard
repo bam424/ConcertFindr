@@ -353,7 +353,9 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSM-qh-IVT">
                                 <rect key="frame" x="16" y="367" width="146" height="30"/>
-                                <state key="normal" title="Use Current Location"/>
+                                <state key="normal" title="Use Current Location">
+                                    <color key="titleColor" red="0.37122592329978943" green="0.62038213014602661" blue="0.6216815710067749" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="getCurrentLocation:" destination="d1c-SP-Gh5" eventType="touchUpInside" id="mzm-Z9-eg4"/>
                                 </connections>
