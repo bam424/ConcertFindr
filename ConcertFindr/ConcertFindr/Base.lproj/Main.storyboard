@@ -351,6 +351,13 @@
                                     <constraint firstAttribute="width" secondItem="YvD-In-oWx" secondAttribute="height" multiplier="343:69" id="dTj-Sk-czj"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSM-qh-IVT">
+                                <rect key="frame" x="16" y="367" width="146" height="30"/>
+                                <state key="normal" title="Use Current Location"/>
+                                <connections>
+                                    <action selector="getCurrentLocation:" destination="d1c-SP-Gh5" eventType="touchUpInside" id="mzm-Z9-eg4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -364,12 +371,14 @@
                             <constraint firstItem="9pX-85-yo9" firstAttribute="trailing" secondItem="Qj2-CL-GYN" secondAttribute="trailingMargin" id="WUA-jO-tf9"/>
                             <constraint firstItem="mG2-Qe-V33" firstAttribute="top" secondItem="9pX-85-yo9" secondAttribute="bottom" constant="14" id="a16-8z-dYI"/>
                             <constraint firstItem="9pX-85-yo9" firstAttribute="top" secondItem="99X-VU-lcr" secondAttribute="bottom" constant="27" id="apG-P4-ZTf"/>
+                            <constraint firstItem="rSM-qh-IVT" firstAttribute="top" secondItem="6df-qI-Xh6" secondAttribute="bottom" constant="5" id="gqh-Tf-V8u"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Yt9-kx-R6K" secondAttribute="trailing" constant="12" id="jJv-4Y-fTK"/>
                             <constraint firstAttribute="trailing" secondItem="IRh-kw-3s2" secondAttribute="trailing" id="jsh-cj-l8x"/>
                             <constraint firstItem="YvD-In-oWx" firstAttribute="trailing" secondItem="Qj2-CL-GYN" secondAttribute="trailingMargin" id="mjl-Ty-Jze"/>
                             <constraint firstItem="6df-qI-Xh6" firstAttribute="trailing" secondItem="Qj2-CL-GYN" secondAttribute="trailingMargin" id="nYW-BV-QSp"/>
                             <constraint firstItem="6df-qI-Xh6" firstAttribute="centerY" secondItem="Qj2-CL-GYN" secondAttribute="centerY" id="nuS-IW-ig6"/>
                             <constraint firstItem="YvD-In-oWx" firstAttribute="leading" secondItem="Qj2-CL-GYN" secondAttribute="leadingMargin" id="oIB-1l-fOR"/>
+                            <constraint firstItem="rSM-qh-IVT" firstAttribute="leading" secondItem="Qj2-CL-GYN" secondAttribute="leadingMargin" id="qIf-tO-Mbx"/>
                             <constraint firstItem="mG2-Qe-V33" firstAttribute="top" secondItem="IRh-kw-3s2" secondAttribute="bottom" id="sX4-KQ-67J"/>
                             <constraint firstItem="dMU-zU-fMz" firstAttribute="top" secondItem="YvD-In-oWx" secondAttribute="bottom" constant="20" id="upa-Ju-QSX"/>
                             <constraint firstItem="RtQ-f8-gbI" firstAttribute="leading" secondItem="Qj2-CL-GYN" secondAttribute="leadingMargin" id="xBD-U1-Jgs"/>
