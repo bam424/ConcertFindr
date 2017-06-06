@@ -44,6 +44,7 @@ class ConcertDetailsViewController: UIViewController {
     var venueCoords: CLLocationCoordinate2D!
     var fromMap : Bool!
     weak var closeBtn: UIButton!
+    weak var shareBtn: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         if (fromMap) {
@@ -53,6 +54,12 @@ class ConcertDetailsViewController: UIViewController {
             closeBtn.tag = 1
             self.view.addSubview(closeBtn)
             self.closeBtn = closeBtn
+            let shareBtn: UIButton = UIButton(frame: CGRect(x: 325, y: 20, width: 70, height: 50))
+            shareBtn.setImage(UIImage(named: "quickaction_icon_share_2x"), for: .normal)
+            shareBtn.addTarget(self, action: #selector(showShareOptions), for: .touchUpInside)
+            self.view.addSubview(shareBtn)
+            self.shareBtn = shareBtn
+            
 
         }
     }
