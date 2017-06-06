@@ -168,19 +168,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsC-6V-cQs">
-                                <rect key="frame" x="148" y="439.5" width="212" height="21"/>
+                                <rect key="frame" x="148" y="440" width="212" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age Restriction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAk-Hx-hle">
-                                <rect key="frame" x="148" y="482.5" width="211" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79n-UG-loc">
-                                <rect key="frame" x="148" y="353.5" width="211" height="21"/>
+                                <rect key="frame" x="148" y="483" width="211" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -207,30 +201,29 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYG-wD-Ck7">
-                                <rect key="frame" x="148" y="396.5" width="212" height="21"/>
+                                <rect key="frame" x="148" y="397" width="212" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erv-32-CHw">
-                                <rect key="frame" x="282" y="62" width="111" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="quickaction_icon_share_2x"/>
-                                <connections>
-                                    <action selector="showShareOptions:" destination="YdB-1S-NHi" eventType="touchUpInside" id="tCt-aE-2os"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3m-w5-0qL">
+                                <rect key="frame" x="148" y="348.5" width="196" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Venue"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="d3m-w5-0qL" firstAttribute="top" secondItem="X4G-oY-5Oy" secondAttribute="bottom" constant="10" id="9BK-og-VKI"/>
                             <constraint firstItem="prq-kU-NnH" firstAttribute="top" secondItem="cNt-Hx-kke" secondAttribute="bottom" constant="10" id="FCo-7q-zmk"/>
                             <constraint firstItem="aD1-iB-YJc" firstAttribute="leading" secondItem="ZuN-q3-Hw9" secondAttribute="leadingMargin" id="FfD-1j-ke3"/>
                             <constraint firstItem="SsY-cN-UFs" firstAttribute="leading" secondItem="ZuN-q3-Hw9" secondAttribute="leadingMargin" id="G0J-4t-veu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="79n-UG-loc" secondAttribute="trailing" id="G1B-sV-dU9"/>
+                            <constraint firstItem="d3m-w5-0qL" firstAttribute="leading" secondItem="SsY-cN-UFs" secondAttribute="trailing" constant="10" id="H0m-QN-otb"/>
                             <constraint firstItem="WvV-rv-48l" firstAttribute="top" secondItem="hKB-BO-KrV" secondAttribute="bottom" constant="10" id="IFQ-Y9-oqH"/>
                             <constraint firstItem="aD1-iB-YJc" firstAttribute="top" secondItem="hKB-BO-KrV" secondAttribute="bottom" id="Irr-wf-WAU"/>
                             <constraint firstItem="QZv-Sx-n74" firstAttribute="leading" secondItem="ZuN-q3-Hw9" secondAttribute="leading" id="L3O-Wt-urG"/>
                             <constraint firstItem="WvV-rv-48l" firstAttribute="leading" secondItem="ZuN-q3-Hw9" secondAttribute="leadingMargin" id="MbQ-iN-yHt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d3m-w5-0qL" secondAttribute="trailing" constant="15" id="MdK-dm-CMp"/>
                             <constraint firstAttribute="trailing" secondItem="QZv-Sx-n74" secondAttribute="trailing" id="QIx-dR-18k"/>
                             <constraint firstItem="zAk-Hx-hle" firstAttribute="leading" secondItem="SsY-cN-UFs" secondAttribute="trailing" constant="10" id="Rwz-NN-Q2B"/>
                             <constraint firstItem="aD1-iB-YJc" firstAttribute="trailing" secondItem="ZuN-q3-Hw9" secondAttribute="trailingMargin" id="SPB-tL-8aB"/>
@@ -245,11 +238,9 @@
                             <constraint firstItem="X4G-oY-5Oy" firstAttribute="leading" secondItem="SsY-cN-UFs" secondAttribute="trailing" constant="10" id="aPI-HT-K6L"/>
                             <constraint firstItem="cNt-Hx-kke" firstAttribute="leading" secondItem="ZuN-q3-Hw9" secondAttribute="leading" constant="15" id="agK-DA-rj0"/>
                             <constraint firstItem="Ddc-2K-z82" firstAttribute="trailing" secondItem="ZuN-q3-Hw9" secondAttribute="trailingMargin" id="bT5-1I-Gjg"/>
-                            <constraint firstItem="79n-UG-loc" firstAttribute="top" secondItem="X4G-oY-5Oy" secondAttribute="bottom" constant="15.5" id="d0a-1a-LNF"/>
                             <constraint firstItem="zAk-Hx-hle" firstAttribute="top" secondItem="hsC-6V-cQs" secondAttribute="bottom" constant="22" id="fQi-xt-Oko"/>
                             <constraint firstItem="gYG-wD-Ck7" firstAttribute="leading" secondItem="SsY-cN-UFs" secondAttribute="trailing" constant="10" id="gId-u3-52I"/>
-                            <constraint firstItem="gYG-wD-Ck7" firstAttribute="top" secondItem="79n-UG-loc" secondAttribute="bottom" constant="22" id="jFC-0H-IgK"/>
-                            <constraint firstItem="79n-UG-loc" firstAttribute="leading" secondItem="SsY-cN-UFs" secondAttribute="trailing" constant="10" id="lPh-Uq-Qk4"/>
+                            <constraint firstItem="gYG-wD-Ck7" firstAttribute="top" secondItem="d3m-w5-0qL" secondAttribute="bottom" constant="15.5" id="h98-rh-dim"/>
                             <constraint firstItem="QZv-Sx-n74" firstAttribute="top" secondItem="ZuN-q3-Hw9" secondAttribute="top" id="oCM-ko-MLI"/>
                             <constraint firstItem="WvV-rv-48l" firstAttribute="trailing" secondItem="ZuN-q3-Hw9" secondAttribute="trailingMargin" id="rji-cn-Khq"/>
                             <constraint firstAttribute="trailing" secondItem="hsC-6V-cQs" secondAttribute="trailing" constant="15" id="tl5-mp-tEt"/>
@@ -259,6 +250,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="Concert Details" id="lpZ-k5-apb">
                         <barButtonItem key="backBarButtonItem" title="true" id="GQS-nv-hm0"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Bfy-fX-7VK">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Erv-32-CHw">
+                                <rect key="frame" x="318" y="4" width="41" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="quickaction_icon_share_2x"/>
+                                <connections>
+                                    <action selector="showShareOptions:" destination="YdB-1S-NHi" eventType="touchUpInside" id="tCt-aE-2os"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="ageRestrictionLabel" destination="zAk-Hx-hle" id="BES-8W-kHT"/>
@@ -268,7 +269,7 @@
                         <outlet property="eventDateLabel" destination="hsC-6V-cQs" id="3rs-5R-zJ3"/>
                         <outlet property="imageNotAvailableImage" destination="aD1-iB-YJc" id="Xga-U4-AYo"/>
                         <outlet property="startTimeLabel" destination="gYG-wD-Ck7" id="H7E-6s-OIV"/>
-                        <outlet property="venueLabel" destination="79n-UG-loc" id="T5J-Xd-QMI"/>
+                        <outlet property="venueBtn" destination="d3m-w5-0qL" id="Kya-Eu-IrS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXS-83-Nm2" userLabel="First Responder" sceneMemberID="firstResponder"/>

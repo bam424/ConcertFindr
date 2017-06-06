@@ -8,6 +8,7 @@
 
 import UIKit
 import Social
+import MapKit
 
 class ConcertDetailsViewController: UIViewController {
 
@@ -18,7 +19,9 @@ class ConcertDetailsViewController: UIViewController {
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var eventDateLabel: UILabel!
     @IBOutlet weak var ageRestrictionLabel: UILabel!
-    @IBOutlet weak var venueLabel: UILabel!
+    
+    @IBOutlet weak var venueBtn: UIButton!
+    
     @IBOutlet weak var artistImageView: UIImageView!
     
     @IBAction func buyTicketsButton(_ sender: UIButton) {
@@ -38,6 +41,7 @@ class ConcertDetailsViewController: UIViewController {
     var ticketURL : String!
     var imgURLString : String!
     
+    var venueCoords: CLLocationCoordinate2D!
     var fromMap : Bool!
     weak var closeBtn: UIButton!
     
@@ -65,7 +69,10 @@ class ConcertDetailsViewController: UIViewController {
         self.startTimeLabel.text = startTime
         self.eventDateLabel.text = eventDate
         self.ageRestrictionLabel.text = ageRestriction
-        self.venueLabel.text = venue
+        
+        self.venueBtn.setTitle(venue, for: .normal)
+        self.venueBtn.addTarget(self, action: #selector(ConcertDetailsViewController.openMapDirections), for: UIControlEvents.touchUpInside)
+        
         if artistID != nil {
             imgURLString = "http://images.sk-static.com/images/media/profile_images/artists/\(artistID!)/huge_avatar"
             let imgURL = URL(string: imgURLString)
@@ -89,6 +96,19 @@ class ConcertDetailsViewController: UIViewController {
             default:
                 break
             }
+        }
+    }
+    
+    func openMapDirections(sender: UIButton) {
+        
+        if (sender == self.venueBtn && self.venueCoords != nil) {
+            let coordinate = CLLocationCoordinate2DMake(self.venueCoords.latitude, self.venueCoords.longitude)
+            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+            mapItem.name = self.venue
+            mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+            
+        } else {
+            return
         }
     }
 
