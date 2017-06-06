@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d1c-SP-Gh5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="d1c-SP-Gh5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -141,13 +141,13 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WvV-rv-48l">
-                                <rect key="frame" x="16" y="74" width="343" height="179"/>
+                                <rect key="frame" x="16" y="30" width="343" height="179"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WvV-rv-48l" secondAttribute="height" multiplier="343:179" id="vcX-GF-AN3"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagenotavailable" translatesAutoresizingMaskIntoConstraints="NO" id="aD1-iB-YJc">
-                                <rect key="frame" x="16" y="64" width="343" height="179"/>
+                                <rect key="frame" x="16" y="20" width="343" height="179"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="aD1-iB-YJc" secondAttribute="height" multiplier="343:179" id="Wpj-9c-DQ6"/>
                                 </constraints>
@@ -211,6 +211,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Venue"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqI-SR-vMz">
+                                <rect key="frame" x="303" y="25" width="57" height="54"/>
+                                <state key="normal" image="quickaction_icon_share_2x"/>
+                                <connections>
+                                    <action selector="showShareOptions:" destination="YdB-1S-NHi" eventType="touchUpInside" id="uIN-zM-hfh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -238,9 +245,11 @@
                             <constraint firstItem="X4G-oY-5Oy" firstAttribute="leading" secondItem="SsY-cN-UFs" secondAttribute="trailing" constant="10" id="aPI-HT-K6L"/>
                             <constraint firstItem="cNt-Hx-kke" firstAttribute="leading" secondItem="ZuN-q3-Hw9" secondAttribute="leading" constant="15" id="agK-DA-rj0"/>
                             <constraint firstItem="Ddc-2K-z82" firstAttribute="trailing" secondItem="ZuN-q3-Hw9" secondAttribute="trailingMargin" id="bT5-1I-Gjg"/>
+                            <constraint firstItem="bqI-SR-vMz" firstAttribute="top" secondItem="hKB-BO-KrV" secondAttribute="bottom" constant="5" id="f6C-DP-Ged"/>
                             <constraint firstItem="zAk-Hx-hle" firstAttribute="top" secondItem="hsC-6V-cQs" secondAttribute="bottom" constant="22" id="fQi-xt-Oko"/>
                             <constraint firstItem="gYG-wD-Ck7" firstAttribute="leading" secondItem="SsY-cN-UFs" secondAttribute="trailing" constant="10" id="gId-u3-52I"/>
                             <constraint firstItem="gYG-wD-Ck7" firstAttribute="top" secondItem="d3m-w5-0qL" secondAttribute="bottom" constant="15.5" id="h98-rh-dim"/>
+                            <constraint firstAttribute="trailing" secondItem="bqI-SR-vMz" secondAttribute="trailing" constant="15" id="jQY-eb-uZa"/>
                             <constraint firstItem="QZv-Sx-n74" firstAttribute="top" secondItem="ZuN-q3-Hw9" secondAttribute="top" id="oCM-ko-MLI"/>
                             <constraint firstItem="WvV-rv-48l" firstAttribute="trailing" secondItem="ZuN-q3-Hw9" secondAttribute="trailingMargin" id="rji-cn-Khq"/>
                             <constraint firstAttribute="trailing" secondItem="hsC-6V-cQs" secondAttribute="trailing" constant="15" id="tl5-mp-tEt"/>
@@ -268,6 +277,7 @@
                         <outlet property="concertTitleLabel" destination="Ddc-2K-z82" id="3uC-5b-nOK"/>
                         <outlet property="eventDateLabel" destination="hsC-6V-cQs" id="3rs-5R-zJ3"/>
                         <outlet property="imageNotAvailableImage" destination="aD1-iB-YJc" id="Xga-U4-AYo"/>
+                        <outlet property="shareBtn" destination="bqI-SR-vMz" id="j2B-iL-Lo0"/>
                         <outlet property="startTimeLabel" destination="gYG-wD-Ck7" id="H7E-6s-OIV"/>
                         <outlet property="venueBtn" destination="d3m-w5-0qL" id="Kya-Eu-IrS"/>
                     </connections>
