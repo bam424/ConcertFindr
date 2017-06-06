@@ -212,14 +212,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erv-32-CHw">
-                                <rect key="frame" x="282" y="62" width="111" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="quickaction_icon_share_2x"/>
-                                <connections>
-                                    <action selector="showShareOptions:" destination="YdB-1S-NHi" eventType="touchUpInside" id="tCt-aE-2os"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -259,6 +251,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="Concert Details" id="lpZ-k5-apb">
                         <barButtonItem key="backBarButtonItem" title="true" id="GQS-nv-hm0"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Bfy-fX-7VK">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Erv-32-CHw">
+                                <rect key="frame" x="318" y="4" width="41" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="quickaction_icon_share_2x"/>
+                                <connections>
+                                    <action selector="showShareOptions:" destination="YdB-1S-NHi" eventType="touchUpInside" id="tCt-aE-2os"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="ageRestrictionLabel" destination="zAk-Hx-hle" id="BES-8W-kHT"/>
@@ -485,7 +487,7 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noDateRangeResult" translatesAutoresizingMaskIntoConstraints="NO" id="wv1-X9-sMA">
-                                <rect key="frame" x="16" y="396.5" width="343" height="69"/>
+                                <rect key="frame" x="16" y="396" width="343" height="69.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wv1-X9-sMA" secondAttribute="height" multiplier="343:69" id="ykA-JN-p1w"/>
                                 </constraints>
