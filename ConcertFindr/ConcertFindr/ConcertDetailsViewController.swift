@@ -102,6 +102,7 @@ class ConcertDetailsViewController: UIViewController {
             if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
                 let twitterVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
                 twitterVC?.setInitialText("Check this event out!")
+                twitterVC?.add(URL(string: self.ticketURL))
                 self.present(twitterVC!, animated: true, completion: nil)
             } else {
                 self.showAlertMessage(message: "Please login to Twitter before sharing.")
@@ -111,7 +112,8 @@ class ConcertDetailsViewController: UIViewController {
             if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
                 let facebookVC = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
                 
-                facebookVC?.setInitialText("Check this event out")
+                facebookVC?.setInitialText("Check this event out!")
+                facebookVC?.add(URL(string: self.ticketURL))
                 
                 self.present(facebookVC!, animated: true, completion: nil)
             }
@@ -125,6 +127,8 @@ class ConcertDetailsViewController: UIViewController {
         actionSheet.addAction(twitterButton)
         actionSheet.addAction(facebookButton)
         actionSheet.addAction(dismissButton)
+        actionSheet.popoverPresentationController?.sourceView = self.view
+        actionSheet.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.size.width / 2.0, y: self.view.bounds.size.height / 2.0, width: 1.0, height: 1.0)
         present(actionSheet, animated: true, completion: nil)
     }
     

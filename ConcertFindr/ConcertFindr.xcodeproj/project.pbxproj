@@ -21,6 +21,7 @@
 		9DFB27831ED7A7ED00E81704 /* ConcertPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFB27821ED7A7ED00E81704 /* ConcertPin.swift */; };
 		CFA3F1711EDE56E00024B438 /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA3F1701EDE56E00024B438 /* VCMapView.swift */; };
 		CFA3F17F1EE64DE10024B438 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA3F17E1EE64DE10024B438 /* Social.framework */; };
+		CFA3F1811EE6677C0024B438 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA3F1801EE6677C0024B438 /* CoreLocation.framework */; };
 		D9EA2053E236927BE713CD32 /* Pods_ConcertFindr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A19B24A5B825A136C1BB1BB /* Pods_ConcertFindr.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		B48670961D4D078A04F77AA2 /* Pods-ConcertFindr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConcertFindr.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConcertFindr/Pods-ConcertFindr.release.xcconfig"; sourceTree = "<group>"; };
 		CFA3F1701EDE56E00024B438 /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
 		CFA3F17E1EE64DE10024B438 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		CFA3F1801EE6677C0024B438 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFA3F1811EE6677C0024B438 /* CoreLocation.framework in Frameworks */,
 				CFA3F17F1EE64DE10024B438 /* Social.framework in Frameworks */,
 				D9EA2053E236927BE713CD32 /* Pods_ConcertFindr.framework in Frameworks */,
 			);
@@ -110,6 +113,7 @@
 		FB041C2CBA73666FC413B9E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CFA3F1801EE6677C0024B438 /* CoreLocation.framework */,
 				CFA3F17E1EE64DE10024B438 /* Social.framework */,
 				6A19B24A5B825A136C1BB1BB /* Pods_ConcertFindr.framework */,
 			);
