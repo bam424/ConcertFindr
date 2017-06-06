@@ -83,6 +83,7 @@ class ConcertTableViewController: UITableViewController {
             detail.venue = concert.venueName
             detail.ticketURL = concert.ticketsURL
             detail.fromMap = false
+            detail.venueCoords = concert.coordinate
         }
     }
 
