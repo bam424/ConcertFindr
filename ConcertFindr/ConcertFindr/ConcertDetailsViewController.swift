@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class ConcertDetailsViewController: UIViewController {
 
@@ -44,11 +45,11 @@ class ConcertDetailsViewController: UIViewController {
         if (fromMap) {
             let closeBtn: UIButton = UIButton(frame: CGRect(x: 0, y: 10, width: 70, height: 50))
             closeBtn.setTitle("Close", for: .normal)
-//            closeBtn.titleLabel?.textColor = UIColor.black
             closeBtn.addTarget(self, action: #selector(closeView), for: .touchUpInside)
             closeBtn.tag = 1
             self.view.addSubview(closeBtn)
             self.closeBtn = closeBtn
+
         }
     }
     
@@ -94,5 +95,42 @@ class ConcertDetailsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func showShareOptions(_ sender: Any) {
+        let actionSheet = UIAlertController(title: "", message: "Share this Event", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let twitterButton = UIAlertAction(title: "Share on Twitter", style: UIAlertActionStyle.default) { (action) -> Void in
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
+                let twitterVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                twitterVC?.setInitialText("Check this event out!")
+                self.present(twitterVC!, animated: true, completion: nil)
+            } else {
+                self.showAlertMessage(message: "Please login to Twitter before sharing.")
+            }
+        }
+        let facebookButton = UIAlertAction(title: "Share on Facebook", style: UIAlertActionStyle.default) { (action) -> Void in
+            if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
+                let facebookVC = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+                
+                facebookVC?.setInitialText("Check this event out")
+                
+                self.present(facebookVC!, animated: true, completion: nil)
+            }
+            else {
+                self.showAlertMessage(message: "You are not connected to your Facebook account.")
+            }
+        }
+        let dismissButton = UIAlertAction(title: "Close", style: UIAlertActionStyle.cancel) { (action) -> Void in
+            
+        }
+        actionSheet.addAction(twitterButton)
+        actionSheet.addAction(facebookButton)
+        actionSheet.addAction(dismissButton)
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    func showAlertMessage(message: String) {
+        let alertController = UIAlertController(title: "Twitter", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 }
